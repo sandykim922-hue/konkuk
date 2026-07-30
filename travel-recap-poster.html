@@ -488,11 +488,25 @@ body.edit-mode [contenteditable]{
   font-family:var(--mono);font-size:8pt;padding:.5mm 2mm;cursor:pointer;
 }
 
+/* print-blocked tip (screen only) */
+.print-tip{
+  position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:99;
+  max-width:520px;padding:14px 18px;border-radius:12px;
+  background:#fff;border:2px solid var(--ku);box-shadow:0 8px 30px rgba(38,38,38,.35);
+  font-family:var(--kr);font-size:13px;line-height:1.8;color:var(--ink);text-align:center;
+}
+.print-tip b{color:var(--hot)}
+.print-tip button{
+  margin-top:8px;font-family:var(--mono);font-size:12px;font-weight:700;
+  padding:4px 14px;border-radius:14px;cursor:pointer;
+  background:var(--ku);color:#fff;border:1px solid var(--ku);
+}
+
 /* ── print: 1 sheet per page ───────────────────── */
 @page{size:A4 portrait;margin:0}
 @media print{
   body{background:none}
-  .toolbar,.day-del,.slot .del{display:none!important}
+  .toolbar,.day-del,.slot .del,.print-tip{display:none!important}
   .pages{padding:0;gap:0}
   .page{box-shadow:inset 0 0 0 1.5mm #fff;break-after:page}
   .cap:empty{visibility:hidden}
@@ -975,7 +989,26 @@ body.edit-mode [contenteditable]{
   document.getElementById('addDay').addEventListener('click', function(){
     addDay().scrollIntoView({behavior:'smooth', block:'start'});
   });
-  document.getElementById('printBtn').addEventListener('click', function(){ window.print(); });
+  var dialogOpened = false;
+  window.addEventListener('beforeprint', function(){ dialogOpened = true; });
+  document.getElementById('printBtn').addEventListener('click', function(){
+    dialogOpened = false;
+    try { window.print(); } catch (e) { /* sandboxed viewer */ }
+    setTimeout(function(){ if (!dialogOpened) showPrintTip(); }, 700);
+  });
+  function showPrintTip(){
+    if (document.getElementById('printTip')) return;
+    var tip = document.createElement('div');
+    tip.id = 'printTip'; tip.className = 'print-tip';
+    tip.innerHTML =
+      '이 뷰어에서는 보안 정책 때문에 인쇄 창이 차단될 수 있어요.<br>' +
+      '<b>① Ctrl+P (Mac: ⌘+P)</b>를 눌러보고, 안 되면<br>' +
+      '<b>② 이 HTML 파일을 다운로드</b>해서 더블클릭으로 브라우저에서 연 뒤 인쇄해 주세요.<br>' +
+      '(인쇄 설정: A4 · 여백 없음 · 배경 그래픽 켜기)<br>' +
+      '<button type="button">닫기</button>';
+    tip.querySelector('button').addEventListener('click', function(){ tip.remove(); });
+    document.body.appendChild(tip);
+  }
   var editBtn = document.getElementById('editBtn');
   editBtn.addEventListener('click', function(){
     var on = document.body.classList.toggle('edit-mode');
