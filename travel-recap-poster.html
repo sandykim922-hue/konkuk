@@ -1,0 +1,1025 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2026 건국대 행정학과 대만 국제교류 — 스크랩북 리캡 포스터</title>
+<style>
+/* ══════════════════════════════════════════════════
+   TAIWAN.RECAP — pastel plaid scrapbook × Konkuk green
+   2026 건국대학교 행정학과 대만 국제교류 프로그램
+   cover + 1 day per A4 page · 13 photo slots per day
+   ══════════════════════════════════════════════════ */
+:root{
+  --ku:#036b3f;         /* Konkuk green anchor      */
+  --ink:#0b3d2a;        /* deep green ink           */
+  --cream:#fdfaf4;      /* plaid ground             */
+  --mint:#cdeedd;
+  --pink:#ffc9e2;
+  --hot:#ff7fc0;        /* pink pop                 */
+  --sky:#c8e6ff;
+  --butter:#ffe9a8;
+  --peach:#ffd9b3;      /* ticket orange            */
+  --frame:#262626;      /* poster frame             */
+  --air-r:#e8574f;      /* airmail red              */
+  --air-b:#3b6bb0;      /* airmail blue             */
+  --mono:'Space Mono','Courier New',ui-monospace,monospace;
+  --kr:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;
+  --hand:'Segoe Print','Bradley Hand','Chalkboard SE','GungSeo','Gungsuh','Comic Sans MS',cursive;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{
+  background:#efe9df;
+  background-image:radial-gradient(rgba(3,107,63,.12) 1px,transparent 1px);
+  background-size:22px 22px;
+  font-family:var(--mono);
+  color:var(--ink);
+}
+
+/* ── toolbar (screen only) ─────────────────────── */
+.toolbar{
+  position:sticky;top:0;z-index:50;
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  padding:12px 18px;
+  background:rgba(253,250,244,.95);backdrop-filter:blur(6px);
+  border-bottom:2px solid var(--ku);
+}
+.toolbar .logo{font-weight:700;letter-spacing:.08em;color:var(--ku)}
+.toolbar .logo em{font-style:normal;color:var(--hot)}
+.toolbar button{
+  font-family:var(--mono);font-size:13px;font-weight:700;
+  padding:8px 16px;cursor:pointer;
+  color:#fff;background:var(--ku);
+  border:1px solid var(--ku);border-radius:20px;letter-spacing:.06em;
+}
+.toolbar button.ghost{background:var(--pink);color:var(--ink);border-color:var(--hot)}
+.toolbar button:hover{filter:brightness(1.08)}
+.toolbar button:focus-visible,.slot:focus-visible{outline:2px solid var(--hot);outline-offset:2px}
+.toolbar .hint{font-size:11px;color:rgba(11,61,42,.6);font-family:var(--kr)}
+.toolbar .help{font-family:var(--kr);font-size:12px;flex-basis:100%}
+.toolbar .help summary{cursor:pointer;font-weight:700;color:var(--ku)}
+.toolbar .help ol{margin:8px 0 4px 22px;line-height:1.8;color:var(--ink)}
+.toolbar .help b{color:var(--hot)}
+
+/* ── page = A4 = framed plaid board ────────────── */
+.pages{display:flex;flex-direction:column;align-items:center;gap:28px;padding:28px 10px 80px}
+.page{
+  position:relative;width:210mm;height:297mm;flex:none;
+  display:flex;flex-direction:column;
+  border:4mm solid var(--frame);
+  box-shadow:inset 0 0 0 1.5mm #fff,0 14px 44px rgba(38,38,38,.35);
+  padding:6.5mm;
+  overflow:hidden;color:var(--ink);
+  /* pastel rainbow plaid */
+  background-color:var(--cream);
+  background-image:
+    repeating-linear-gradient(0deg,
+      rgba(255,127,192,.20) 0 1.6mm, transparent 1.6mm 12mm,
+      rgba(127,184,255,.20) 12mm 13.6mm, transparent 13.6mm 24mm,
+      rgba(84,196,144,.22) 24mm 25.6mm, transparent 25.6mm 36mm,
+      rgba(255,201,77,.20) 36mm 37.6mm, transparent 37.6mm 48mm),
+    repeating-linear-gradient(90deg,
+      rgba(255,127,192,.20) 0 1.6mm, transparent 1.6mm 12mm,
+      rgba(127,184,255,.20) 12mm 13.6mm, transparent 13.6mm 24mm,
+      rgba(84,196,144,.22) 24mm 25.6mm, transparent 25.6mm 36mm,
+      rgba(255,201,77,.20) 36mm 37.6mm, transparent 37.6mm 48mm);
+}
+/* scattered sprinkles + tape bits */
+.spark{position:absolute;z-index:6;font-size:11pt;pointer-events:none}
+.sp-a{color:var(--hot)}.sp-b{color:#7fb8ff}.sp-c{color:#ffb84d}.sp-d{color:var(--ku)}
+.tape-bit{
+  position:absolute;z-index:6;width:14mm;height:5mm;pointer-events:none;
+  background:rgba(255,127,192,.4);border:1px solid rgba(255,127,192,.3);
+}
+.tape-bit.b{background:rgba(127,184,255,.4);border-color:rgba(127,184,255,.3)}
+.tape-bit.y{background:rgba(255,214,77,.45);border-color:rgba(255,194,77,.4)}
+
+/* ── theatre-ticket header ─────────────────────── */
+.ticket-head{
+  position:relative;flex:none;background:#fff;
+  padding:1.5mm 4mm 2mm;transform:rotate(-.5deg);
+  box-shadow:0 1mm 3mm rgba(38,38,38,.25);
+}
+.ticket-head .repeat-row{
+  font-size:5.5pt;letter-spacing:.28em;color:#b5b0a6;
+  white-space:nowrap;overflow:hidden;border-bottom:1.5px dashed #d8d2c6;
+  padding-bottom:1mm;
+}
+.ticket-head .main-row{
+  display:flex;align-items:baseline;gap:3.5mm;padding-top:1.5mm;
+}
+.ticket-head .admit{font-size:7pt;letter-spacing:.1em;color:#8a857b;flex:none}
+.day-num{
+  font-size:26pt;line-height:1;font-weight:700;letter-spacing:-.01em;
+  color:var(--ku);text-shadow:.7mm .7mm 0 var(--pink);flex:none;
+}
+.day-date{font-size:9pt;color:var(--air-r);letter-spacing:.1em;font-weight:700}
+.ticket-head .mini-code{
+  margin-left:auto;flex:none;width:24mm;height:6mm;align-self:center;
+  background:repeating-linear-gradient(90deg,var(--ink) 0 .5mm,transparent .5mm 1.7mm);
+}
+[contenteditable]:empty::before{content:attr(data-ph);opacity:.35}
+[contenteditable]:focus{outline:1.5px dashed var(--hot);outline-offset:2px}
+/* edit mode: highlight every editable text field */
+body.edit-mode [contenteditable]{
+  outline:1.5px dashed rgba(255,127,192,.85);outline-offset:1px;
+  background:rgba(255,255,255,.5);border-radius:1px;
+}
+
+/* ── title strip + stickers ────────────────────── */
+.head{position:relative;flex:none;display:flex;align-items:center;gap:3mm;padding:3.5mm 1mm 3mm}
+.day-title{
+  font-family:var(--kr);font-size:12.5pt;font-weight:800;color:var(--ink);
+  line-height:1.4;max-width:104mm;
+}
+.day-title-wrap mark,.day-title mark{background:var(--butter);padding:.5mm 1.5mm;box-shadow:2px 2px 0 var(--pink)}
+.stickers{margin-left:auto;display:flex;align-items:center;gap:2.5mm;flex:none}
+.st-burst{
+  width:19mm;height:19mm;display:grid;place-items:center;flex:none;
+  background:var(--hot);color:#fff;font-size:7.5pt;font-weight:700;text-align:center;line-height:1.1;
+  transform:rotate(-10deg);
+  clip-path:polygon(50% 0%,57% 12%,70% 4%,71% 18%,86% 14%,81% 28%,96% 29%,86% 40%,100% 46%,88% 54%,98% 65%,83% 66%,89% 80%,74% 76%,74% 91%,61% 83%,57% 97%,50% 85%,43% 97%,39% 83%,26% 91%,26% 76%,11% 80%,17% 66%,2% 65%,12% 54%,0% 46%,14% 40%,4% 29%,19% 28%,14% 14%,29% 18%,30% 4%,43% 12%);
+}
+.st-emoji{
+  width:11mm;height:11mm;border-radius:50%;display:grid;place-items:center;flex:none;
+  background:#fff;font-size:11pt;border:1.5px solid var(--ku);
+  box-shadow:2px 2px 0 var(--sky);transform:rotate(-6deg);
+}
+.st-emoji.p{border-color:var(--hot);box-shadow:2px 2px 0 var(--butter);transform:rotate(7deg)}
+.st-emoji.txt{font-family:var(--mono);font-weight:700;font-size:9.5pt;color:var(--hot)}
+.st-emoji.p.txt{color:var(--ku)}
+.st-stamp{
+  padding:1.5mm 2.5mm;flex:none;background:#fff;
+  border:1.5px dashed var(--ku);color:var(--ku);
+  font-size:9pt;font-weight:700;transform:rotate(4deg);
+  box-shadow:2px 2px 0 var(--mint);
+}
+
+/* ── photo grid: 13 slots (4 cols × 5 rows) ────── */
+.grid{
+  flex:1;min-height:0;
+  display:grid;gap:3mm;
+  grid-template-columns:repeat(4,1fr);
+  grid-template-rows:repeat(5,1fr);
+  grid-auto-flow:dense;padding:1mm;
+}
+.slot{
+  position:relative;display:flex;flex-direction:column;min-height:0;
+  background:#fff;padding:1.2mm 1.2mm 0;
+  box-shadow:0 1mm 2.5mm rgba(38,38,38,.3);
+  cursor:pointer;border:none;text-align:inherit;
+}
+/* pastel polaroid frame rotation */
+.grid .slot:nth-child(4n+2){background:#ffeef7}
+.grid .slot:nth-child(4n+3){background:#ecf6ff}
+.grid .slot:nth-child(4n+4){background:#fff8e2}
+/* photobooth-strip slot + postage-stamp slot accents */
+.grid .slot:nth-child(5){background:var(--frame)}
+.grid .slot:nth-child(5) .cap{color:#fff}
+.grid .slot:nth-child(11){box-shadow:0 1mm 2.5mm rgba(38,38,38,.3),inset 0 0 0 1mm #fff,inset 0 0 0 1.6mm var(--ku)}
+.grid .slot:nth-child(1),.grid .slot:nth-child(9){grid-column:span 2;grid-row:span 2}
+.grid .slot:nth-child(6){grid-column:span 2}
+.slot:nth-child(3n+1){transform:rotate(-1.2deg)}
+.slot:nth-child(3n+2){transform:rotate(1deg)}
+.grid .slot:nth-child(1){transform:rotate(-1.8deg)}
+/* pastel tape on top */
+.slot::before{
+  content:"";position:absolute;top:-2mm;left:50%;transform:translateX(-50%) rotate(-2deg);
+  width:12mm;height:4mm;z-index:2;
+  background:rgba(255,127,192,.45);border:1px solid rgba(255,127,192,.3);
+}
+.slot:nth-child(3n)::before{background:rgba(127,184,255,.45);border-color:rgba(127,184,255,.35)}
+.slot:nth-child(3n+2)::before{background:rgba(255,214,77,.5);border-color:rgba(255,194,77,.4)}
+.ph{
+  position:relative;flex:1;min-height:0;overflow:hidden;
+  background:#f2efe8;display:grid;place-items:center;
+}
+.ph .hint{
+  font-size:7pt;color:var(--ku);letter-spacing:.08em;text-align:center;
+  border:1.5px dashed rgba(3,107,63,.5);border-radius:3mm;padding:1.5mm 2.5mm;
+  background:rgba(255,255,255,.7);
+}
+.ph img{display:none;width:100%;height:100%;object-fit:cover}
+.slot.filled .ph img{display:block}
+.slot.filled .ph .hint{display:none}
+.slot .del{
+  position:absolute;top:1mm;right:1mm;z-index:3;display:none;
+  width:5mm;height:5mm;border-radius:50%;cursor:pointer;
+  background:#fff;color:var(--hot);border:1.5px solid var(--hot);
+  font-family:var(--mono);font-size:8pt;line-height:1;
+}
+.slot.filled:hover .del{display:block}
+.cap{
+  flex:none;min-height:5mm;padding:1mm .5mm 1.2mm;
+  font-family:var(--kr);font-size:6.5pt;line-height:1.3;
+  color:var(--ink);text-align:center;cursor:text;
+}
+
+/* ── airmail envelope footer ───────────────────── */
+.airmail{
+  flex:none;margin:3mm 1mm 0;padding:2.2mm;
+  background:repeating-linear-gradient(45deg,
+    var(--air-r) 0 3mm,#fff 3mm 6mm,var(--air-b) 6mm 9mm,#fff 9mm 12mm);
+  box-shadow:0 1mm 3mm rgba(38,38,38,.25);
+}
+.airmail-inner{
+  background:#fff;display:flex;align-items:center;gap:4mm;
+  padding:2mm 4mm;font-size:7pt;letter-spacing:.06em;
+}
+.airmail .loc{color:var(--ku);font-weight:700}
+.airmail .memo{font-family:var(--kr);color:rgba(11,61,42,.7);min-width:0;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:58mm}
+.airmail .stamp-mini{
+  flex:none;padding:1mm 2mm;border:1.5px dashed var(--air-r);
+  color:var(--air-r);font-size:7.5pt;font-weight:700;
+}
+.barcode{
+  margin-left:auto;flex:none;width:26mm;height:6mm;
+  background:
+    repeating-linear-gradient(90deg,var(--ink) 0 .5mm,transparent .5mm 1.6mm),
+    repeating-linear-gradient(90deg,var(--ink) 0 1mm,transparent 1mm 3.7mm);
+}
+.pageno{flex:none;color:var(--hot);font-weight:700}
+
+/* ══ COVER — no-photo kitsch collage ════════════ */
+.cover .collage{flex:1;min-height:0;position:relative;margin-top:3mm}
+/* flight route line */
+.route{
+  position:absolute;top:2mm;left:2mm;right:2mm;
+  display:flex;align-items:center;gap:2.5mm;z-index:4;
+}
+.route .pill{
+  font-size:10.5pt;font-weight:700;color:var(--ku);background:#fff;flex:none;
+  border:2px solid var(--ku);border-radius:5mm;padding:1mm 4mm;
+  box-shadow:2px 2px 0 var(--pink);
+}
+.route .rt-line{flex:1;border-top:2.5px dashed var(--ku);position:relative;height:0}
+.route .rt-line .plane{position:absolute;top:-5.5mm;left:45%;font-size:13pt;transform:rotate(8deg)}
+.route .rt-line .hp{position:absolute;top:-4mm;font-size:8.5pt;color:var(--hot)}
+/* orange transit ticket */
+.tw-ticket{
+  position:absolute;top:17mm;left:1mm;width:62mm;
+  background:var(--peach);box-shadow:0 1mm 3mm rgba(38,38,38,.3);
+  transform:rotate(-3deg);font-size:7pt;z-index:3;
+}
+.tw-ticket .tt-head{
+  background:#f0803c;color:#fff;font-weight:700;
+  padding:1.2mm 3mm;font-size:7.5pt;letter-spacing:.06em;
+}
+.tw-ticket .tt-body{padding:2mm 3mm;display:flex;flex-direction:column;gap:1mm;background:#fff}
+.tw-ticket .tt-body b{color:#f0803c}
+.tw-ticket .tt-body .kr-line{font-family:var(--kr)}
+/* luggage tag */
+.tag{
+  position:absolute;top:19mm;right:2mm;width:58mm;
+  background:var(--butter);border:2px solid var(--ku);border-radius:2.5mm;
+  padding:2.5mm 3mm 2.5mm 11mm;transform:rotate(3deg);z-index:3;
+  font-size:7.5pt;line-height:1.6;box-shadow:0 1mm 3mm rgba(38,38,38,.25);
+}
+.tag::before{
+  content:"";position:absolute;left:3.5mm;top:50%;transform:translateY(-50%);
+  width:4mm;height:4mm;border-radius:50%;background:var(--cream);
+  box-shadow:0 0 0 1.3mm #fff,0 0 0 2mm var(--ku);
+}
+.tag b{color:var(--ku);font-size:9.5pt}
+.tag .kr-line{font-family:var(--kr);font-weight:700}
+/* weather sticker */
+.weather{
+  position:absolute;top:42mm;left:7mm;width:23mm;height:23mm;border-radius:50%;
+  background:var(--sky);border:2px solid #4a9de0;z-index:4;transform:rotate(-7deg);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-size:9pt;font-weight:700;color:#1d5c96;box-shadow:2.5px 2.5px 0 var(--pink);
+}
+.weather small{font-size:5.5pt;letter-spacing:.14em}
+/* center patch badge */
+.badge{
+  position:absolute;top:50mm;left:50%;transform:translateX(-50%) rotate(-5deg);
+  width:66mm;height:66mm;border-radius:50%;background:var(--hot);z-index:5;
+  display:grid;place-items:center;text-align:center;
+  box-shadow:0 1.5mm 4mm rgba(38,38,38,.3);
+}
+.badge .inner{
+  width:58mm;height:58mm;border-radius:50%;border:2.5px dashed #fff;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2mm;
+  color:#fff;
+}
+.badge .b1{font-size:7.5pt;letter-spacing:.22em}
+.badge .b2{font-size:19pt;font-weight:800;line-height:1.15}
+.badge .b3{font-size:6.5pt;font-weight:700;letter-spacing:.12em;background:#fff;color:var(--hot);padding:.8mm 3mm;border-radius:4mm}
+/* EasyCard 悠遊卡 */
+.easycard{
+  position:absolute;top:82mm;right:2mm;width:54mm;height:32mm;
+  border-radius:2.5mm;z-index:4;transform:rotate(4deg);
+  background:linear-gradient(135deg,var(--ku) 0%,#2f9e6a 55%,#8fd7b0 100%);
+  color:#fff;padding:3mm;box-shadow:0 1.5mm 4mm rgba(38,38,38,.35);
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.easycard .ec-name{font-size:11pt;font-weight:700;letter-spacing:.06em}
+.easycard .ec-sub{font-size:6.5pt;opacity:.85;letter-spacing:.14em}
+.easycard .ec-chip{width:8mm;height:6mm;border-radius:1mm;background:linear-gradient(135deg,#ffe9a8,#e0b94f)}
+/* boba shop receipt */
+.receipt{
+  position:absolute;bottom:0;right:4mm;width:50mm;z-index:4;
+  background:#fff;transform:rotate(2deg);
+  box-shadow:0 1mm 3mm rgba(38,38,38,.3);
+  font-size:7pt;padding:2.5mm 3.5mm;
+  border-top:2px dashed #cfc9bd;border-bottom:2px dashed #cfc9bd;
+}
+.receipt .rc-title{text-align:center;font-weight:700;letter-spacing:.18em;color:var(--ku);
+  border-bottom:1.5px dashed #cfc9bd;padding-bottom:1mm;margin-bottom:1.2mm}
+.receipt .row{display:flex;justify-content:space-between;font-family:var(--kr);line-height:1.7}
+.receipt .total{border-top:1.5px dashed #cfc9bd;margin-top:1.2mm;padding-top:1.2mm;
+  font-weight:700;color:var(--hot);display:flex;justify-content:space-between}
+/* cute text stickers */
+.txt-st{
+  position:absolute;z-index:6;font-family:var(--kr);font-weight:900;
+  color:var(--ku);background:#fff;border:2px solid var(--hot);border-radius:6mm;
+  padding:1.5mm 4mm;font-size:10.5pt;box-shadow:2.5px 2.5px 0 var(--butter);
+}
+.txt-st.mono{font-family:var(--mono);font-weight:700;font-size:8pt;letter-spacing:.1em;
+  border-color:var(--ku);box-shadow:2.5px 2.5px 0 var(--pink);color:var(--hot)}
+/* big emoji stickers */
+.cover .big-st{position:absolute;z-index:7;display:grid;place-items:center;border-radius:50%;background:#fff}
+.bs-boba{top:44mm;left:36mm;width:15mm;height:15mm;font-size:14pt;border:1.5px solid var(--ku);box-shadow:2px 2px 0 var(--mint);transform:rotate(-8deg)}
+.bs-dump{top:88mm;left:14mm;width:13mm;height:13mm;font-size:12pt;border:1.5px solid var(--hot);box-shadow:2px 2px 0 var(--pink);transform:rotate(6deg)}
+.bs-pine{top:48mm;right:32mm;width:14mm;height:14mm;font-size:13pt;border:1.5px solid #e0b94f;box-shadow:2px 2px 0 var(--butter);transform:rotate(9deg)}
+.bs-palm{bottom:48mm;left:64mm;width:13mm;height:13mm;font-size:12pt;border:1.5px solid var(--ku);box-shadow:2px 2px 0 var(--sky);transform:rotate(-5deg)}
+.bs-cam{bottom:52mm;right:10mm;width:13mm;height:13mm;font-size:12pt;border:1.5px solid #4a9de0;box-shadow:2px 2px 0 var(--sky);transform:rotate(7deg)}
+.bs-duck{bottom:46mm;left:38mm;width:14mm;height:14mm;font-size:13pt;border:1.5px solid #f0a636;box-shadow:2px 2px 0 var(--butter);transform:rotate(-9deg)}
+.bs-sun{bottom:8mm;left:8mm;width:21mm;height:21mm;font-size:20pt;border:2px solid #f0a636;box-shadow:2.5px 2.5px 0 var(--butter);transform:rotate(-7deg)}
+.bs-melon{bottom:27mm;left:28mm;width:15mm;height:15mm;font-size:14pt;border:1.5px solid var(--hot);box-shadow:2px 2px 0 var(--pink);transform:rotate(8deg)}
+.bs-wave{bottom:5mm;left:33mm;width:13mm;height:13mm;font-size:12pt;border:1.5px solid #4a9de0;box-shadow:2px 2px 0 var(--sky);transform:rotate(-4deg)}
+.bs-ice{top:118mm;left:10mm;width:14mm;height:14mm;font-size:13pt;border:1.5px solid var(--hot);box-shadow:2px 2px 0 var(--sky);transform:rotate(6deg)}
+/* cover envelope with title */
+.cover-env{position:relative;flex:none;margin:2mm 1mm 0}
+.cover-env .airmail-inner{
+  position:relative;display:block;min-height:68mm;padding:4mm 5mm;
+}
+.env-addr{font-size:7.5pt;letter-spacing:.08em;color:#8a857b;line-height:2}
+.env-addr b{color:var(--ink)}
+.env-stamp{
+  position:absolute;top:3mm;right:4mm;width:16mm;height:19mm;
+  border:2px dashed var(--air-b);color:var(--air-b);
+  display:grid;place-items:center;font-size:12pt;
+  transform:rotate(2deg);
+}
+.env-stamp small{font-size:6pt;font-weight:700;letter-spacing:.1em}
+.env-postmark{
+  position:absolute;top:5mm;right:23mm;width:17mm;height:17mm;border-radius:50%;
+  border:1.5px dashed var(--ku);color:var(--ku);
+  display:grid;place-items:center;text-align:center;
+  font-size:5.5pt;letter-spacing:.08em;line-height:1.5;transform:rotate(-8deg);
+}
+/* cookie-sticker lettering: chubby rounded letters, solid pastel colors */
+.env-title{
+  position:absolute;left:0;right:0;bottom:4mm;text-align:center;
+  font-family:ui-rounded,'Arial Rounded MT Bold','Comic Sans MS','Trebuchet MS',sans-serif;
+  font-weight:900;font-size:33pt;line-height:1.15;letter-spacing:.01em;
+  white-space:nowrap;
+}
+.lt{
+  display:inline-block;
+  text-shadow:.8mm .9mm 0 var(--pink);
+  transform:rotate(-3deg);
+}
+.lt:nth-child(even){transform:rotate(2.5deg)}
+.c1{color:var(--ku)}
+.c2{color:var(--hot);text-shadow:.8mm .9mm 0 var(--butter)}
+.c3{color:#4a9de0;text-shadow:.8mm .9mm 0 var(--pink)}
+.c4{color:#f0a636;text-shadow:.8mm .9mm 0 var(--mint)}
+.env-title .sub{
+  display:inline-block;margin-top:2.5mm;
+  font-family:var(--mono);font-weight:700;font-size:12.5pt;letter-spacing:.14em;
+  color:var(--ink);background:var(--butter);padding:1.2mm 4mm;
+  box-shadow:2.5px 2.5px 0 var(--pink);transform:rotate(-.8deg);
+}
+.env-title .sub.s2{
+  margin-top:1.8mm;background:var(--pink);box-shadow:2.5px 2.5px 0 var(--butter);
+  transform:rotate(.8deg);
+}
+
+/* ══ ROLLING PAPER — to professor (9 cards) ═════ */
+.rp-grid{
+  flex:1;min-height:0;display:grid;gap:3mm;padding:1mm;
+  grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);
+}
+.rp-card{
+  position:relative;display:flex;flex-direction:column;min-height:0;
+  background:#fff;padding:1.5mm 1.5mm 1mm;
+  box-shadow:0 1mm 2.5mm rgba(38,38,38,.3);
+}
+.rp-grid .rp-card:nth-child(3n+1){background:#ffeef7;transform:rotate(-1deg)}
+.rp-grid .rp-card:nth-child(3n+2){background:#ecf6ff;transform:rotate(.8deg)}
+.rp-grid .rp-card:nth-child(3n){background:#fff8e2;transform:rotate(-.6deg)}
+.rp-card::before{
+  content:"";position:absolute;top:-2mm;left:50%;transform:translateX(-50%) rotate(-2deg);
+  width:11mm;height:3.5mm;z-index:2;
+  background:rgba(255,127,192,.45);border:1px solid rgba(255,127,192,.3);
+}
+.rp-card:nth-child(3n)::before{background:rgba(127,184,255,.45);border-color:rgba(127,184,255,.35)}
+.rp-card:nth-child(3n+2)::before{background:rgba(255,214,77,.5);border-color:rgba(255,194,77,.4)}
+.rp-card .slot{flex:1;min-height:0;padding:0;background:none;box-shadow:none;transform:none}
+.rp-card .slot::before{display:none}
+.rp-msg{
+  flex:none;height:17.5mm;margin-top:1.5mm;padding:0 1mm;overflow:hidden;
+  font-family:var(--hand);font-size:8.5pt;line-height:5.5mm;color:var(--ink);
+  background:repeating-linear-gradient(0deg,transparent 0 5.2mm,rgba(3,107,63,.3) 5.2mm 5.5mm);
+}
+.rp-from{
+  flex:none;padding:1.2mm 1mm .8mm;text-align:right;
+  font-family:var(--hand);font-size:10.5pt;font-weight:700;color:var(--hot);letter-spacing:.04em;
+}
+
+/* ══ BACK COVER ═════════════════════════════════ */
+.back-mid{
+  flex:1;min-height:0;position:relative;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8mm;
+}
+.end-cookie{
+  font-family:ui-rounded,'Arial Rounded MT Bold','Comic Sans MS','Trebuchet MS',sans-serif;
+  font-weight:900;font-size:48pt;line-height:1;text-align:center;white-space:nowrap;
+}
+.pill-line{display:flex;gap:5mm}
+.sub-pill{
+  font-family:var(--mono);font-weight:700;font-size:11pt;letter-spacing:.14em;
+  color:var(--ink);background:var(--pink);padding:1.2mm 4mm;
+  box-shadow:2.5px 2.5px 0 var(--butter);transform:rotate(-1deg);
+}
+.sub-pill.b{background:var(--butter);box-shadow:2.5px 2.5px 0 var(--pink);transform:rotate(1deg)}
+.stamps-row{display:flex;gap:9mm;margin-top:2mm}
+.pstamp{
+  width:28mm;height:28mm;border-radius:50%;flex:none;
+  display:grid;place-items:center;text-align:center;
+  font-size:6pt;letter-spacing:.08em;line-height:1.7;
+  border:2px dashed var(--ku);color:var(--ku);transform:rotate(-7deg);
+}
+.pstamp.p{border-color:var(--hot);color:var(--hot);transform:rotate(5deg)}
+.pstamp.bl{border-color:var(--air-b);color:var(--air-b);transform:rotate(-3deg)}
+.bp-return{
+  background:#fff;border:1.5px dashed var(--ku);border-radius:2mm;
+  padding:2.5mm 6mm;font-size:10.5pt;font-weight:700;letter-spacing:.12em;color:var(--ink);
+  box-shadow:0 1mm 3mm rgba(38,38,38,.25);transform:rotate(1deg);
+}
+.bp-return b{color:var(--ku)}
+.names{
+  display:flex;flex-direction:column;align-items:center;gap:3.5mm;
+}
+.names-rest{display:flex;flex-wrap:wrap;justify-content:center;gap:3mm;max-width:158mm}
+.name-tag.prof{
+  font-size:12pt;padding:2mm 7mm;border-color:var(--ku);
+  box-shadow:3px 3px 0 var(--butter);transform:rotate(-1deg);
+}
+.name-tag{
+  font-family:var(--hand);font-weight:700;font-size:10pt;color:var(--ink);
+  background:#fff;border:2px solid var(--ku);border-radius:6mm;
+  padding:1.5mm 4.5mm;min-width:26mm;text-align:center;
+  box-shadow:2px 2px 0 var(--pink);transform:rotate(-1.5deg);
+}
+.names-rest .name-tag:nth-child(4n+2){border-color:var(--hot);box-shadow:2px 2px 0 var(--butter);transform:rotate(1.5deg)}
+.names-rest .name-tag:nth-child(4n+3){border-color:#4a9de0;box-shadow:2px 2px 0 var(--sky);transform:rotate(-1deg)}
+.names-rest .name-tag:nth-child(4n){border-color:#f0a636;box-shadow:2px 2px 0 var(--mint);transform:rotate(1deg)}
+
+/* day delete (screen only) */
+.day-del{
+  position:absolute;top:2mm;right:2mm;z-index:9;
+  background:#fff;color:var(--hot);
+  border:1.5px solid var(--hot);border-radius:2mm;
+  font-family:var(--mono);font-size:8pt;padding:.5mm 2mm;cursor:pointer;
+}
+
+/* print-blocked tip (screen only) */
+.print-tip{
+  position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:99;
+  max-width:520px;padding:14px 18px;border-radius:12px;
+  background:#fff;border:2px solid var(--ku);box-shadow:0 8px 30px rgba(38,38,38,.35);
+  font-family:var(--kr);font-size:13px;line-height:1.8;color:var(--ink);text-align:center;
+}
+.print-tip b{color:var(--hot)}
+.print-tip button{
+  margin-top:8px;font-family:var(--mono);font-size:12px;font-weight:700;
+  padding:4px 14px;border-radius:14px;cursor:pointer;
+  background:var(--ku);color:#fff;border:1px solid var(--ku);
+}
+
+/* ── print: 1 sheet per page ───────────────────── */
+@page{size:A4 portrait;margin:0}
+@media print{
+  body{background:none}
+  .toolbar,.day-del,.slot .del,.print-tip{display:none!important}
+  .pages{padding:0;gap:0}
+  .page{box-shadow:inset 0 0 0 1.5mm #fff;break-after:page}
+  .cap:empty{visibility:hidden}
+  .slot,.ph{cursor:default}
+}
+
+/* small screens: keep A4 ratio, allow pan */
+@media (max-width:850px){
+  .pages{align-items:flex-start;overflow-x:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <span class="logo">KONKUK<em>✈TAIWAN</em>.RECAP_</span>
+  <button id="addDay">+ ADD DAY</button>
+  <button id="editBtn" class="ghost">✎ 편집표시 ON</button>
+  <button id="printBtn" class="ghost">⎙ PRINT</button>
+  <span class="hint">분홍 점선 = 클릭해서 글자 입력 가능한 곳</span>
+  <details class="help">
+    <summary>❓ 사용법 (수정 · 인쇄)</summary>
+    <ol>
+      <li><b>사진 넣기</b> — 사진 칸을 클릭하면 파일 선택창이 열립니다. 여러 장을 한 번에 선택하면 그 페이지의 빈 칸에 순서대로 자동 배치됩니다. 넣은 사진을 다시 클릭하면 교체, 사진 위 <b>×</b> 버튼으로 삭제.</li>
+      <li><b>글자 수정</b> — 분홍 점선으로 표시된 곳(날짜·제목·캡션·메모 등)을 클릭하고 바로 타이핑하세요. 위의 <b>✎ 편집표시</b> 버튼으로 표시를 켜고 끌 수 있습니다.</li>
+      <li><b>캡션</b> — 모든 사진 아래 흰 여백을 클릭하면 캡션을 쓸 수 있습니다 (표지 네컷 스트립 포함).</li>
+      <li><b>날짜 추가/삭제</b> — <b>+ ADD DAY</b>로 하루 추가, 각 페이지 오른쪽 위 <b>DEL ×</b>로 삭제.</li>
+      <li><b>인쇄</b> — <b>⎙ PRINT</b> 클릭 → 인쇄 설정에서 <b>용지 A4 · 여백 없음 · 배경 그래픽(배경 색상 및 이미지) 켜기</b>. PDF로 저장하려면 대상을 "PDF로 저장"으로 선택.</li>
+      <li><b>주의</b> — 사진과 글은 저장되지 않으니, 완성한 그 자리에서 바로 인쇄하거나 PDF로 저장하세요.</li>
+    </ol>
+  </details>
+</div>
+
+<main class="pages" id="pages">
+
+  <!-- ═══ COVER ═══ -->
+  <section class="page cover">
+    <span class="spark sp-a" style="top:4mm;left:70mm">♥</span>
+    <span class="spark sp-b" style="top:64mm;left:4mm">✦</span>
+    <span class="spark sp-c" style="top:96mm;right:6mm;font-size:14pt">☆</span>
+    <span class="spark sp-d" style="top:130mm;left:5mm">✈</span>
+    <span class="spark sp-a" style="top:150mm;right:64mm;font-size:13pt">✦</span>
+    <span class="spark sp-b" style="bottom:64mm;left:70mm">♥</span>
+    <span class="spark sp-c" style="top:118mm;left:56mm">⋆</span>
+    <span class="spark sp-d" style="bottom:40mm;right:60mm">☆</span>
+    <span class="spark sp-a" style="bottom:8mm;left:66mm">♥</span>
+    <span class="spark sp-b" style="top:180mm;right:8mm">✦</span>
+    <span class="tape-bit" style="top:92mm;left:30mm;transform:rotate(40deg)"></span>
+    <span class="tape-bit y" style="top:160mm;right:30mm;transform:rotate(-30deg)"></span>
+    <span class="tape-bit b" style="bottom:34mm;left:44mm;transform:rotate(20deg)"></span>
+
+    <!-- ① 타이틀 봉투 (맨 위) -->
+    <div class="airmail cover-env">
+      <div class="airmail-inner">
+        <div class="env-addr">
+          FROM: <b>INCHEON (ICN), KOREA</b><br>
+          TO: <b>TAICHUNG 台中, TAIWAN</b> · VIA AIR MAIL
+        </div>
+        <div class="env-stamp">🏔<small>110</small></div>
+        <div class="env-postmark">KONKUK<br>✈<br>2026</div>
+        <div class="env-title">
+          <span class="lt c1">2</span><span class="lt c2">0</span><span class="lt c3">2</span><span class="lt c4">6</span>
+          <span class="lt c1">K</span><span class="lt c2">O</span><span class="lt c3">R</span><span class="lt c4">E</span><span class="lt c1">A</span><span class="lt c2">-</span><span class="lt c3">T</span><span class="lt c4">A</span><span class="lt c1">I</span><span class="lt c2">W</span><span class="lt c3">A</span><span class="lt c4">N</span>
+          <br><span class="sub">KONKUK UNIV. ★ PUBLIC ADMINISTRATION</span>
+          <br><span class="sub s2">INTERNATIONAL EXCHANGE PROGRAM</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ② 키치 콜라주 (사진 없음) -->
+    <div class="collage">
+      <div class="route">
+        <span class="pill">ICN</span>
+        <span class="rt-line"><span class="plane">✈</span><span class="hp" style="left:20%">♥</span><span class="hp" style="left:70%">♥</span></span>
+        <span class="pill">RMQ</span>
+      </div>
+
+      <div class="tw-ticket">
+        <div class="tt-head">Anytime Day Single</div>
+        <div class="tt-body">
+          <span>Valid for one journey from</span>
+          <span><b>INCHEON (ICN)</b> to <b>TAICHUNG (RMQ)</b></span>
+          <span class="kr-line" contenteditable data-ph="2026.07.26 — 07.31 · 5박 6일_"></span>
+        </div>
+      </div>
+
+      <div class="tag">
+        <b>LUGGAGE TAG ✈</b><br>
+        KONKUK PA · ICN → RMQ<br>
+        <span class="kr-line" contenteditable data-ph="이름을 적어주세요_"></span>
+      </div>
+
+      <div class="weather">☀ 33°C<small>TAICHUNG</small></div>
+
+      <div class="badge">
+        <div class="inner">
+          <span class="b1">★ EST. 2026 ★</span>
+          <span class="b2">KONKUK<br>♥<br>TAIWAN</span>
+          <span class="b3">PUBLIC ADMINISTRATION</span>
+        </div>
+      </div>
+
+      <div class="easycard">
+        <div class="ec-chip"></div>
+        <div>
+          <div class="ec-name">悠遊卡 EasyCard</div>
+          <div class="ec-sub">TAICHUNG ★ KONKUK PA</div>
+        </div>
+      </div>
+
+      <span class="txt-st mono" style="top:124mm;right:4mm;transform:rotate(2deg)">NO SLEEP JUST VIBES</span>
+
+      <div class="receipt">
+        <div class="rc-title">★ BOBA RECEIPT ★</div>
+        <div class="row"><span>珍珠奶茶 버블티</span><span>×32</span></div>
+        <div class="row"><span>牛肉麵 우육면</span><span>×6</span></div>
+        <div class="row"><span>烤鴨 오리구이</span><span>×1</span></div>
+        <div class="row"><span>鳳梨酥 펑리수</span><span>×∞</span></div>
+        <div class="total"><span>TOTAL</span><span>행복 100%</span></div>
+      </div>
+
+      <span class="big-st bs-boba">🧋</span>
+      <span class="big-st bs-dump">🥟</span>
+      <span class="big-st bs-pine">🍍</span>
+      <span class="big-st bs-palm">🌴</span>
+      <span class="big-st bs-cam">📸</span>
+      <span class="big-st bs-duck">🦆</span>
+      <span class="big-st bs-sun">☀️</span>
+      <span class="big-st bs-melon">🍉</span>
+      <span class="big-st bs-wave">🌊</span>
+      <span class="big-st bs-ice">🍧</span>
+    </div>
+
+    <!-- ③ 티켓 스트립 (아래로 이동) -->
+    <header class="ticket-head" style="margin-top:3mm">
+      <div class="repeat-row">KONKUK KONKUK KONKUK KONKUK KONKUK KONKUK KONKUK KONKUK KONKUK KONKUK KONKUK KONKUK KONKUK</div>
+      <div class="main-row">
+        <span class="admit">ADMIT ONE ★</span>
+        <span class="day-num" style="font-size:15pt">TAIWAN 2026 ✈</span>
+        <span class="day-date">DEPT. OF PUBLIC ADMIN.</span>
+        <span class="mini-code" aria-hidden="true"></span>
+      </div>
+    </header>
+
+    <div class="airmail" style="margin-top:2.5mm">
+      <div class="airmail-inner">
+        <span class="loc" contenteditable data-ph="2026.07.26 — 2026.07.31"></span>
+        <span class="memo" contenteditable data-ph="함께한 사람들_"></span>
+        <span class="stamp-mini">AIR MAIL</span>
+        <span class="barcode" aria-hidden="true"></span>
+        <span class="pageno">COVER</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ROLLING PAPER — TO. 교수님 ═══ -->
+  <section class="page rolling" id="rollingPage">
+    <span class="spark sp-a" style="top:40mm;left:3mm">♥</span>
+    <span class="spark sp-b" style="top:24mm;right:60mm">✦</span>
+    <span class="spark sp-c" style="bottom:38mm;left:4mm">☆</span>
+    <span class="spark sp-a" style="top:130mm;right:3mm;font-size:12pt">✦</span>
+    <span class="spark sp-d" style="bottom:60mm;right:4mm">⋆</span>
+
+    <header class="ticket-head">
+      <div class="repeat-row">THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU</div>
+      <div class="main-row">
+        <span class="admit">SPECIAL ★</span>
+        <h1 class="day-num" style="font-size:20pt">TO. Prof. Hyungjo Hur ♥</h1>
+        <span class="day-date">ROLLING PAPER</span>
+        <span class="mini-code" aria-hidden="true"></span>
+      </div>
+    </header>
+
+    <div class="head">
+      <div class="day-title" contenteditable data-ph="Prof. Hyungjo Hur께 감사한 마음을 담아 아홉 명이 씁니다 ♥"></div>
+      <div class="stickers">
+        <span class="st-emoji txt">&lt;3</span>
+        <span class="st-stamp">台灣</span>
+        <span class="st-burst">THANK<br>YOU!</span>
+      </div>
+    </div>
+
+    <div class="rp-grid">
+      <div class="rp-card">
+        <figure class="slot" tabindex="0">
+          <div class="ph"><img alt=""><button class="del" title="사진 제거">×</button>
+          <span class="hint">+ PHOTO</span></div>
+        </figure>
+        <div class="rp-msg" contenteditable data-ph="교수님께 전하는 메시지 세 줄_"></div>
+        <div class="rp-from" contenteditable data-ph="FROM."></div>
+      </div>
+      <div class="rp-card">
+        <figure class="slot" tabindex="0">
+          <div class="ph"><img alt=""><button class="del" title="사진 제거">×</button>
+          <span class="hint">+ PHOTO</span></div>
+        </figure>
+        <div class="rp-msg" contenteditable data-ph="교수님께 전하는 메시지 세 줄_"></div>
+        <div class="rp-from" contenteditable data-ph="FROM."></div>
+      </div>
+      <div class="rp-card">
+        <figure class="slot" tabindex="0">
+          <div class="ph"><img alt=""><button class="del" title="사진 제거">×</button>
+          <span class="hint">+ PHOTO</span></div>
+        </figure>
+        <div class="rp-msg" contenteditable data-ph="교수님께 전하는 메시지 세 줄_"></div>
+        <div class="rp-from" contenteditable data-ph="FROM."></div>
+      </div>
+      <div class="rp-card">
+        <figure class="slot" tabindex="0">
+          <div class="ph"><img alt=""><button class="del" title="사진 제거">×</button>
+          <span class="hint">+ PHOTO</span></div>
+        </figure>
+        <div class="rp-msg" contenteditable data-ph="교수님께 전하는 메시지 세 줄_"></div>
+        <div class="rp-from" contenteditable data-ph="FROM."></div>
+      </div>
+      <div class="rp-card">
+        <figure class="slot" tabindex="0">
+          <div class="ph"><img alt=""><button class="del" title="사진 제거">×</button>
+          <span class="hint">+ PHOTO</span></div>
+        </figure>
+        <div class="rp-msg" contenteditable data-ph="교수님께 전하는 메시지 세 줄_"></div>
+        <div class="rp-from" contenteditable data-ph="FROM."></div>
+      </div>
+      <div class="rp-card">
+        <figure class="slot" tabindex="0">
+          <div class="ph"><img alt=""><button class="del" title="사진 제거">×</button>
+          <span class="hint">+ PHOTO</span></div>
+        </figure>
+        <div class="rp-msg" contenteditable data-ph="교수님께 전하는 메시지 세 줄_"></div>
+        <div class="rp-from" contenteditable data-ph="FROM."></div>
+      </div>
+      <div class="rp-card">
+        <figure class="slot" tabindex="0">
+          <div class="ph"><img alt=""><button class="del" title="사진 제거">×</button>
+          <span class="hint">+ PHOTO</span></div>
+        </figure>
+        <div class="rp-msg" contenteditable data-ph="교수님께 전하는 메시지 세 줄_"></div>
+        <div class="rp-from" contenteditable data-ph="FROM."></div>
+      </div>
+      <div class="rp-card">
+        <figure class="slot" tabindex="0">
+          <div class="ph"><img alt=""><button class="del" title="사진 제거">×</button>
+          <span class="hint">+ PHOTO</span></div>
+        </figure>
+        <div class="rp-msg" contenteditable data-ph="교수님께 전하는 메시지 세 줄_"></div>
+        <div class="rp-from" contenteditable data-ph="FROM."></div>
+      </div>
+      <div class="rp-card">
+        <figure class="slot" tabindex="0">
+          <div class="ph"><img alt=""><button class="del" title="사진 제거">×</button>
+          <span class="hint">+ PHOTO</span></div>
+        </figure>
+        <div class="rp-msg" contenteditable data-ph="교수님께 전하는 메시지 세 줄_"></div>
+        <div class="rp-from" contenteditable data-ph="FROM."></div>
+      </div>
+    </div>
+
+    <div class="airmail">
+      <div class="airmail-inner">
+        <span class="loc">TO.PROF.HYUNGJO HUR ♥ FROM.US</span>
+        <span class="memo" contenteditable data-ph="2026 대만 국제교류를 함께한 아홉 명이 드립니다_"></span>
+        <span class="stamp-mini">AIR MAIL</span>
+        <span class="barcode" aria-hidden="true"></span>
+        <span class="pageno" id="rpNo">P.07/08</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BACK COVER ═══ -->
+  <section class="page back" id="backPage">
+    <span class="spark sp-a" style="top:36mm;left:8mm">♥</span>
+    <span class="spark sp-b" style="top:60mm;right:10mm">✦</span>
+    <span class="spark sp-c" style="top:110mm;left:6mm;font-size:14pt">☆</span>
+    <span class="spark sp-d" style="top:90mm;right:6mm">✈</span>
+    <span class="spark sp-a" style="bottom:70mm;right:14mm;font-size:13pt">✦</span>
+    <span class="spark sp-b" style="bottom:50mm;left:10mm">♥</span>
+    <span class="spark sp-c" style="top:170mm;left:40mm">⋆</span>
+    <span class="spark sp-d" style="bottom:36mm;right:44mm">☆</span>
+    <span class="tape-bit" style="top:70mm;left:24mm;transform:rotate(40deg)"></span>
+    <span class="tape-bit y" style="top:150mm;right:26mm;transform:rotate(-25deg)"></span>
+    <span class="tape-bit b" style="bottom:60mm;left:50mm;transform:rotate(15deg)"></span>
+
+    <header class="ticket-head">
+      <div class="repeat-row">SEE YOU SEE YOU SEE YOU SEE YOU SEE YOU SEE YOU SEE YOU SEE YOU SEE YOU SEE YOU SEE YOU SEE YOU</div>
+      <div class="main-row">
+        <span class="admit">ADMIT ONE ★</span>
+        <span class="day-num" style="font-size:15pt">RETURN FLIGHT ✈</span>
+        <span class="day-date">RMQ → ICN</span>
+        <span class="mini-code" aria-hidden="true"></span>
+      </div>
+    </header>
+
+    <div class="back-mid">
+      <div class="end-cookie">
+        <span class="lt c1">T</span><span class="lt c2">H</span><span class="lt c3">E</span><span class="lt c4" style="margin-left:7mm">E</span><span class="lt c1">N</span><span class="lt c2">D</span><span class="lt c3">!</span>
+      </div>
+      <div class="pill-line">
+        <span class="sub-pill">SEE YOU AGAIN ★ 再見</span>
+        <span class="sub-pill b">2026.07.26 — 07.30</span>
+      </div>
+      <div class="stamps-row">
+        <span class="pstamp">TAICHUNG<br>★<br>DEPARTED<br>2026.07.30</span>
+        <span class="pstamp p">KONKUK PA<br>♥<br>10 TRAVELERS</span>
+        <span class="pstamp bl">INCHEON<br>✈<br>ARRIVED<br>SAFE&amp;SOUND</span>
+      </div>
+      <div class="bp-return">BOARDING PASS · <b>RMQ ✈ ICN</b></div>
+      <div class="names">
+        <div class="names-top"><span class="name-tag prof" contenteditable>Prof. Hyungjo Hur ♥</span></div>
+        <div class="names-rest">
+        <span class="name-tag" contenteditable data-ph="이름_"></span>
+        <span class="name-tag" contenteditable data-ph="이름_"></span>
+        <span class="name-tag" contenteditable data-ph="이름_"></span>
+        <span class="name-tag" contenteditable data-ph="이름_"></span>
+        <span class="name-tag" contenteditable data-ph="이름_"></span>
+        <span class="name-tag" contenteditable data-ph="이름_"></span>
+        <span class="name-tag" contenteditable data-ph="이름_"></span>
+        <span class="name-tag" contenteditable data-ph="이름_"></span>
+        <span class="name-tag" contenteditable data-ph="이름_"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="airmail">
+      <div class="airmail-inner">
+        <span class="loc">MADE WITH ♥ BY KONKUK PA</span>
+        <span class="memo" contenteditable data-ph="한 줄 마무리_"></span>
+        <span class="stamp-mini">AIR MAIL</span>
+        <span class="barcode" aria-hidden="true"></span>
+        <span class="pageno" id="backNo">P.08/08</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<template id="dayTpl">
+  <section class="page day">
+    <span class="spark sp-a" style="top:34mm;left:3mm">♥</span>
+    <span class="spark sp-b" style="top:22mm;right:64mm">✦</span>
+    <span class="spark sp-c" style="bottom:36mm;left:4mm">☆</span>
+    <span class="spark sp-d" style="bottom:58mm;right:3mm">⋆</span>
+    <span class="spark sp-a" style="top:120mm;right:3mm;font-size:12pt">✦</span>
+    <span class="tape-bit b" style="top:118mm;left:2mm;transform:rotate(50deg)"></span>
+    <button class="day-del" title="이 날짜 삭제">DEL ×</button>
+
+    <header class="ticket-head">
+      <div class="repeat-row">TAICHUNG TAICHUNG TAICHUNG TAICHUNG TAICHUNG TAICHUNG TAICHUNG TAICHUNG TAICHUNG TAICHUNG TAICHUNG</div>
+      <div class="main-row">
+        <span class="admit">ADMIT ONE ★</span>
+        <h1 class="day-num">DAY_01</h1>
+        <span class="day-date" contenteditable data-ph="2026.07.26_SUN"></span>
+        <span class="mini-code" aria-hidden="true"></span>
+      </div>
+    </header>
+
+    <div class="head">
+      <div class="day-title" contenteditable data-ph="오늘의 한 줄 제목을 입력하세요"></div>
+      <div class="stickers">
+        <span class="st-emoji txt">&lt;3</span>
+        <span class="st-emoji p txt">:)</span>
+        <span class="st-stamp">台灣</span>
+        <span class="st-burst">BEST<br>DAY!</span>
+      </div>
+    </div>
+
+    <div class="grid"></div>
+
+    <div class="airmail">
+      <div class="airmail-inner">
+        <span class="loc" contenteditable data-ph="TAICHUNG_24.1477°N"></span>
+        <span class="memo" contenteditable data-ph="오늘의 메모_"></span>
+        <span class="stamp-mini">AIR MAIL</span>
+        <span class="barcode" aria-hidden="true"></span>
+        <span class="pageno">P.01/01</span>
+      </div>
+    </div>
+  </section>
+</template>
+
+<script>
+(function(){
+  'use strict';
+  var SLOTS = 13;                 // photo slots per day (>= 10)
+  var MAX_EDGE = 1600;            // downscale uploads for sharp-but-light printing
+  var pages = document.getElementById('pages');
+  var tpl = document.getElementById('dayTpl');
+  var picker = document.createElement('input');
+  picker.type = 'file'; picker.accept = 'image/*'; picker.multiple = true;
+  var targetSlot = null;
+
+  function makeSlot(){
+    var f = document.createElement('figure');
+    f.className = 'slot'; f.tabIndex = 0;
+    f.innerHTML =
+      '<div class="ph"><img alt=""><button class="del" title="사진 제거">×</button>' +
+      '<span class="hint">+ PHOTO</span></div>' +
+      '<figcaption class="cap" contenteditable data-ph="캡션_"></figcaption>';
+    return f;
+  }
+
+  function addDay(dateText){
+    var node = tpl.content.firstElementChild.cloneNode(true);
+    var grid = node.querySelector('.grid');
+    for (var i = 0; i < SLOTS; i++) grid.appendChild(makeSlot());
+    if (dateText) node.querySelector('.day-date').textContent = dateText;
+    pages.insertBefore(node, document.getElementById('rollingPage'));
+    renumber();
+    return node;
+  }
+
+  function renumber(){
+    var days = pages.querySelectorAll('.page.day');
+    var total = String(days.length + 3).padStart(2, '0'); // cover + days + rolling + back
+    days.forEach(function(p, i){
+      var n = String(i + 1).padStart(2, '0');
+      p.querySelector('.day-num').textContent = 'DAY_' + n;
+      p.querySelector('.pageno').textContent = 'P.' + String(i + 2).padStart(2, '0') + '/' + total;
+    });
+    document.getElementById('rpNo').textContent = 'P.' + String(days.length + 2).padStart(2, '0') + '/' + total;
+    document.getElementById('backNo').textContent = 'P.' + total + '/' + total;
+  }
+
+  // downscale via canvas so 13 photos/page stay light + print sharp
+  function loadInto(slot, file){
+    if (!file || !/^image\//.test(file.type)) return;
+    var img = new Image();
+    img.onload = function(){
+      URL.revokeObjectURL(img.src);
+      var s = Math.min(1, MAX_EDGE / Math.max(img.width, img.height));
+      var c = document.createElement('canvas');
+      c.width = Math.round(img.width * s);
+      c.height = Math.round(img.height * s);
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+      slot.querySelector('img').src = c.toDataURL('image/jpeg', 0.88);
+      slot.classList.add('filled');
+    };
+    img.src = URL.createObjectURL(file);
+  }
+
+  picker.addEventListener('change', function(){
+    if (!targetSlot) return;
+    var files = Array.prototype.slice.call(picker.files);
+    if (!files.length) return;
+    // fill the clicked slot, then flow extras into that page's empty slots
+    var day = targetSlot.closest('.page');
+    var queue = [targetSlot].concat(
+      Array.prototype.filter.call(day.querySelectorAll('.slot'), function(s){
+        return s !== targetSlot && !s.classList.contains('filled');
+      })
+    );
+    files.forEach(function(f, i){ if (queue[i]) loadInto(queue[i], f); });
+    picker.value = ''; targetSlot = null;
+  });
+
+  pages.addEventListener('click', function(e){
+    var del = e.target.closest('.del');
+    if (del){
+      var s = del.closest('.slot');
+      s.classList.remove('filled');
+      s.querySelector('img').removeAttribute('src');
+      return;
+    }
+    if (e.target.closest('.day-del')){
+      var p = e.target.closest('.page');
+      if (pages.querySelectorAll('.page.day').length > 1 &&
+          confirm('이 날짜 페이지를 삭제할까요?')) { p.remove(); renumber(); }
+      return;
+    }
+    if (e.target.closest('.cap') || e.target.closest('[contenteditable]')) return;
+    var slot = e.target.closest('.slot');
+    if (slot){ targetSlot = slot; picker.click(); }
+  });
+
+  pages.addEventListener('keydown', function(e){
+    if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('slot')){
+      e.preventDefault(); targetSlot = e.target; picker.click();
+    }
+  });
+
+  document.getElementById('addDay').addEventListener('click', function(){
+    addDay().scrollIntoView({behavior:'smooth', block:'start'});
+  });
+  var dialogOpened = false;
+  window.addEventListener('beforeprint', function(){ dialogOpened = true; });
+  document.getElementById('printBtn').addEventListener('click', function(){
+    dialogOpened = false;
+    try { window.print(); } catch (e) { /* sandboxed viewer */ }
+    setTimeout(function(){ if (!dialogOpened) showPrintTip(); }, 700);
+  });
+  function showPrintTip(){
+    if (document.getElementById('printTip')) return;
+    var tip = document.createElement('div');
+    tip.id = 'printTip'; tip.className = 'print-tip';
+    tip.innerHTML =
+      '이 뷰어에서는 보안 정책 때문에 인쇄 창이 차단될 수 있어요.<br>' +
+      '<b>① Ctrl+P (Mac: ⌘+P)</b>를 눌러보고, 안 되면<br>' +
+      '<b>② 이 HTML 파일을 다운로드</b>해서 더블클릭으로 브라우저에서 연 뒤 인쇄해 주세요.<br>' +
+      '(인쇄 설정: A4 · 여백 없음 · 배경 그래픽 켜기)<br>' +
+      '<button type="button">닫기</button>';
+    tip.querySelector('button').addEventListener('click', function(){ tip.remove(); });
+    document.body.appendChild(tip);
+  }
+  var editBtn = document.getElementById('editBtn');
+  editBtn.addEventListener('click', function(){
+    var on = document.body.classList.toggle('edit-mode');
+    editBtn.textContent = on ? '✎ 편집표시 ON' : '✎ 편집표시 OFF';
+  });
+  document.body.classList.add('edit-mode'); // start with editable fields visible
+
+  // 5-day trip: DAY_01–05 prefilled
+  ['2026.07.26_SUN','2026.07.27_MON','2026.07.28_TUE','2026.07.29_WED','2026.07.30_THU']
+    .forEach(function(d){ addDay(d); });
+})();
+</script>
+</body>
+</html>
