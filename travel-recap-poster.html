@@ -377,16 +377,16 @@ body.edit-mode [contenteditable]{
   font-weight:900;font-size:33pt;line-height:1.15;letter-spacing:.01em;
   white-space:nowrap;
 }
-.env-title .lt{
+.lt{
   display:inline-block;
   text-shadow:.8mm .9mm 0 var(--pink);
   transform:rotate(-3deg);
 }
-.env-title .lt:nth-child(even){transform:rotate(2.5deg)}
-.env-title .c1{color:var(--ku)}
-.env-title .c2{color:var(--hot);text-shadow:.8mm .9mm 0 var(--butter)}
-.env-title .c3{color:#4a9de0;text-shadow:.8mm .9mm 0 var(--pink)}
-.env-title .c4{color:#f0a636;text-shadow:.8mm .9mm 0 var(--mint)}
+.lt:nth-child(even){transform:rotate(2.5deg)}
+.c1{color:var(--ku)}
+.c2{color:var(--hot);text-shadow:.8mm .9mm 0 var(--butter)}
+.c3{color:#4a9de0;text-shadow:.8mm .9mm 0 var(--pink)}
+.c4{color:#f0a636;text-shadow:.8mm .9mm 0 var(--mint)}
 .env-title .sub{
   display:inline-block;margin-top:2.5mm;
   font-family:var(--mono);font-weight:700;font-size:12.5pt;letter-spacing:.14em;
@@ -396,6 +396,74 @@ body.edit-mode [contenteditable]{
 .env-title .sub.s2{
   margin-top:1.8mm;background:var(--pink);box-shadow:2.5px 2.5px 0 var(--butter);
   transform:rotate(.8deg);
+}
+
+/* ══ ROLLING PAPER — to professor (9 cards) ═════ */
+.rp-grid{
+  flex:1;min-height:0;display:grid;gap:3mm;padding:1mm;
+  grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);
+}
+.rp-card{
+  position:relative;display:flex;flex-direction:column;min-height:0;
+  background:#fff;padding:1.5mm 1.5mm 1mm;
+  box-shadow:0 1mm 2.5mm rgba(38,38,38,.3);
+}
+.rp-grid .rp-card:nth-child(3n+1){background:#ffeef7;transform:rotate(-1deg)}
+.rp-grid .rp-card:nth-child(3n+2){background:#ecf6ff;transform:rotate(.8deg)}
+.rp-grid .rp-card:nth-child(3n){background:#fff8e2;transform:rotate(-.6deg)}
+.rp-card::before{
+  content:"";position:absolute;top:-2mm;left:50%;transform:translateX(-50%) rotate(-2deg);
+  width:11mm;height:3.5mm;z-index:2;
+  background:rgba(255,127,192,.45);border:1px solid rgba(255,127,192,.3);
+}
+.rp-card:nth-child(3n)::before{background:rgba(127,184,255,.45);border-color:rgba(127,184,255,.35)}
+.rp-card:nth-child(3n+2)::before{background:rgba(255,214,77,.5);border-color:rgba(255,194,77,.4)}
+.rp-card .slot{flex:1;min-height:0;padding:0;background:none;box-shadow:none;transform:none}
+.rp-card .slot::before{display:none}
+.rp-msg{
+  flex:none;height:17.5mm;margin-top:1.5mm;padding:0 1mm;overflow:hidden;
+  font-family:var(--kr);font-size:7.5pt;line-height:5.5mm;color:var(--ink);
+  background:repeating-linear-gradient(0deg,transparent 0 5.2mm,rgba(3,107,63,.3) 5.2mm 5.5mm);
+}
+.rp-from{
+  flex:none;padding:1mm .5mm .5mm;text-align:right;
+  font-size:6.5pt;font-weight:700;color:var(--hot);letter-spacing:.06em;
+}
+
+/* ══ BACK COVER ═════════════════════════════════ */
+.back-mid{
+  flex:1;min-height:0;position:relative;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8mm;
+}
+.end-cookie{
+  font-family:ui-rounded,'Arial Rounded MT Bold','Comic Sans MS','Trebuchet MS',sans-serif;
+  font-weight:900;font-size:48pt;line-height:1;text-align:center;white-space:nowrap;
+}
+.pill-line{display:flex;gap:5mm}
+.sub-pill{
+  font-family:var(--mono);font-weight:700;font-size:11pt;letter-spacing:.14em;
+  color:var(--ink);background:var(--pink);padding:1.2mm 4mm;
+  box-shadow:2.5px 2.5px 0 var(--butter);transform:rotate(-1deg);
+}
+.sub-pill.b{background:var(--butter);box-shadow:2.5px 2.5px 0 var(--pink);transform:rotate(1deg)}
+.stamps-row{display:flex;gap:9mm;margin-top:2mm}
+.pstamp{
+  width:28mm;height:28mm;border-radius:50%;flex:none;
+  display:grid;place-items:center;text-align:center;
+  font-size:6pt;letter-spacing:.08em;line-height:1.7;
+  border:2px dashed var(--ku);color:var(--ku);transform:rotate(-7deg);
+}
+.pstamp.p{border-color:var(--hot);color:var(--hot);transform:rotate(5deg)}
+.pstamp.bl{border-color:var(--air-b);color:var(--air-b);transform:rotate(-3deg)}
+.bp-return{
+  background:#fff;border:1.5px dashed var(--ku);border-radius:2mm;
+  padding:2.5mm 6mm;font-size:10.5pt;font-weight:700;letter-spacing:.12em;color:var(--ink);
+  box-shadow:0 1mm 3mm rgba(38,38,38,.25);transform:rotate(1deg);
+}
+.bp-return b{color:var(--ku)}
+.credits{
+  font-family:var(--kr);font-size:9.5pt;font-weight:700;color:var(--ink);
+  text-align:center;max-width:140mm;line-height:1.9;
 }
 
 /* day delete (screen only) */
@@ -566,6 +634,171 @@ body.edit-mode [contenteditable]{
     </div>
   </section>
 
+  <!-- ═══ ROLLING PAPER — TO. 교수님 ═══ -->
+  <section class="page rolling" id="rollingPage">
+    <span class="spark sp-a" style="top:40mm;left:3mm">♥</span>
+    <span class="spark sp-b" style="top:24mm;right:60mm">✦</span>
+    <span class="spark sp-c" style="bottom:38mm;left:4mm">☆</span>
+    <span class="spark sp-a" style="top:130mm;right:3mm;font-size:12pt">✦</span>
+    <span class="spark sp-d" style="bottom:60mm;right:4mm">⋆</span>
+
+    <header class="ticket-head">
+      <div class="repeat-row">THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU THANK YOU</div>
+      <div class="main-row">
+        <span class="admit">SPECIAL ★</span>
+        <h1 class="day-num" style="font-size:20pt">TO. 교수님 ♥</h1>
+        <span class="day-date">ROLLING PAPER</span>
+        <span class="mini-code" aria-hidden="true"></span>
+      </div>
+    </header>
+
+    <div class="head">
+      <div class="day-title" contenteditable data-ph="교수님, 감사한 마음을 담아 아홉 명이 씁니다 ♥"></div>
+      <div class="stickers">
+        <span class="st-emoji txt">&lt;3</span>
+        <span class="st-stamp">台灣</span>
+        <span class="st-burst">THANK<br>YOU!</span>
+      </div>
+    </div>
+
+    <div class="rp-grid">
+      <div class="rp-card">
+        <figure class="slot" tabindex="0">
+          <div class="ph"><img alt=""><button class="del" title="사진 제거">×</button>
+          <span class="hint">+ PHOTO</span></div>
+        </figure>
+        <div class="rp-msg" contenteditable data-ph="교수님께 전하는 메시지 세 줄_"></div>
+        <div class="rp-from" contenteditable data-ph="FROM."></div>
+      </div>
+      <div class="rp-card">
+        <figure class="slot" tabindex="0">
+          <div class="ph"><img alt=""><button class="del" title="사진 제거">×</button>
+          <span class="hint">+ PHOTO</span></div>
+        </figure>
+        <div class="rp-msg" contenteditable data-ph="교수님께 전하는 메시지 세 줄_"></div>
+        <div class="rp-from" contenteditable data-ph="FROM."></div>
+      </div>
+      <div class="rp-card">
+        <figure class="slot" tabindex="0">
+          <div class="ph"><img alt=""><button class="del" title="사진 제거">×</button>
+          <span class="hint">+ PHOTO</span></div>
+        </figure>
+        <div class="rp-msg" contenteditable data-ph="교수님께 전하는 메시지 세 줄_"></div>
+        <div class="rp-from" contenteditable data-ph="FROM."></div>
+      </div>
+      <div class="rp-card">
+        <figure class="slot" tabindex="0">
+          <div class="ph"><img alt=""><button class="del" title="사진 제거">×</button>
+          <span class="hint">+ PHOTO</span></div>
+        </figure>
+        <div class="rp-msg" contenteditable data-ph="교수님께 전하는 메시지 세 줄_"></div>
+        <div class="rp-from" contenteditable data-ph="FROM."></div>
+      </div>
+      <div class="rp-card">
+        <figure class="slot" tabindex="0">
+          <div class="ph"><img alt=""><button class="del" title="사진 제거">×</button>
+          <span class="hint">+ PHOTO</span></div>
+        </figure>
+        <div class="rp-msg" contenteditable data-ph="교수님께 전하는 메시지 세 줄_"></div>
+        <div class="rp-from" contenteditable data-ph="FROM."></div>
+      </div>
+      <div class="rp-card">
+        <figure class="slot" tabindex="0">
+          <div class="ph"><img alt=""><button class="del" title="사진 제거">×</button>
+          <span class="hint">+ PHOTO</span></div>
+        </figure>
+        <div class="rp-msg" contenteditable data-ph="교수님께 전하는 메시지 세 줄_"></div>
+        <div class="rp-from" contenteditable data-ph="FROM."></div>
+      </div>
+      <div class="rp-card">
+        <figure class="slot" tabindex="0">
+          <div class="ph"><img alt=""><button class="del" title="사진 제거">×</button>
+          <span class="hint">+ PHOTO</span></div>
+        </figure>
+        <div class="rp-msg" contenteditable data-ph="교수님께 전하는 메시지 세 줄_"></div>
+        <div class="rp-from" contenteditable data-ph="FROM."></div>
+      </div>
+      <div class="rp-card">
+        <figure class="slot" tabindex="0">
+          <div class="ph"><img alt=""><button class="del" title="사진 제거">×</button>
+          <span class="hint">+ PHOTO</span></div>
+        </figure>
+        <div class="rp-msg" contenteditable data-ph="교수님께 전하는 메시지 세 줄_"></div>
+        <div class="rp-from" contenteditable data-ph="FROM."></div>
+      </div>
+      <div class="rp-card">
+        <figure class="slot" tabindex="0">
+          <div class="ph"><img alt=""><button class="del" title="사진 제거">×</button>
+          <span class="hint">+ PHOTO</span></div>
+        </figure>
+        <div class="rp-msg" contenteditable data-ph="교수님께 전하는 메시지 세 줄_"></div>
+        <div class="rp-from" contenteditable data-ph="FROM."></div>
+      </div>
+    </div>
+
+    <div class="airmail">
+      <div class="airmail-inner">
+        <span class="loc">TO.PROFESSOR ♥ FROM.US</span>
+        <span class="memo" contenteditable data-ph="2026 대만 국제교류를 함께한 아홉 명이 드립니다_"></span>
+        <span class="stamp-mini">AIR MAIL</span>
+        <span class="barcode" aria-hidden="true"></span>
+        <span class="pageno" id="rpNo">P.07/08</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ BACK COVER ═══ -->
+  <section class="page back" id="backPage">
+    <span class="spark sp-a" style="top:36mm;left:8mm">♥</span>
+    <span class="spark sp-b" style="top:60mm;right:10mm">✦</span>
+    <span class="spark sp-c" style="top:110mm;left:6mm;font-size:14pt">☆</span>
+    <span class="spark sp-d" style="top:90mm;right:6mm">✈</span>
+    <span class="spark sp-a" style="bottom:70mm;right:14mm;font-size:13pt">✦</span>
+    <span class="spark sp-b" style="bottom:50mm;left:10mm">♥</span>
+    <span class="spark sp-c" style="top:170mm;left:40mm">⋆</span>
+    <span class="spark sp-d" style="bottom:36mm;right:44mm">☆</span>
+    <span class="tape-bit" style="top:70mm;left:24mm;transform:rotate(40deg)"></span>
+    <span class="tape-bit y" style="top:150mm;right:26mm;transform:rotate(-25deg)"></span>
+    <span class="tape-bit b" style="bottom:60mm;left:50mm;transform:rotate(15deg)"></span>
+
+    <header class="ticket-head">
+      <div class="repeat-row">SEE YOU SEE YOU SEE YOU SEE YOU SEE YOU SEE YOU SEE YOU SEE YOU SEE YOU SEE YOU SEE YOU SEE YOU</div>
+      <div class="main-row">
+        <span class="admit">ADMIT ONE ★</span>
+        <span class="day-num" style="font-size:15pt">RETURN FLIGHT ✈</span>
+        <span class="day-date">RMQ → ICN</span>
+        <span class="mini-code" aria-hidden="true"></span>
+      </div>
+    </header>
+
+    <div class="back-mid">
+      <div class="end-cookie">
+        <span class="lt c1">T</span><span class="lt c2">H</span><span class="lt c3">E</span><span class="lt c4" style="margin-left:7mm">E</span><span class="lt c1">N</span><span class="lt c2">D</span><span class="lt c3">!</span>
+      </div>
+      <div class="pill-line">
+        <span class="sub-pill">SEE YOU AGAIN ★ 再見</span>
+        <span class="sub-pill b">2026.07.26 — 07.31</span>
+      </div>
+      <div class="stamps-row">
+        <span class="pstamp">TAICHUNG<br>★<br>DEPARTED<br>2026.07.31</span>
+        <span class="pstamp p">KONKUK PA<br>♥<br>9 TRAVELERS</span>
+        <span class="pstamp bl">INCHEON<br>✈<br>ARRIVED<br>SAFE&amp;SOUND</span>
+      </div>
+      <div class="bp-return">BOARDING PASS · <b>RMQ ✈ ICN</b> · GATE Y2K</div>
+      <div class="credits" contenteditable data-ph="함께한 사람들: 이름을 적어주세요 (9명) ♥_"></div>
+    </div>
+
+    <div class="airmail">
+      <div class="airmail-inner">
+        <span class="loc">MADE WITH ♥ BY KONKUK PA</span>
+        <span class="memo" contenteditable data-ph="한 줄 마무리_"></span>
+        <span class="stamp-mini">AIR MAIL</span>
+        <span class="barcode" aria-hidden="true"></span>
+        <span class="pageno" id="backNo">P.08/08</span>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <template id="dayTpl">
@@ -633,23 +866,26 @@ body.edit-mode [contenteditable]{
     return f;
   }
 
-  function addDay(){
+  function addDay(dateText){
     var node = tpl.content.firstElementChild.cloneNode(true);
     var grid = node.querySelector('.grid');
     for (var i = 0; i < SLOTS; i++) grid.appendChild(makeSlot());
-    pages.appendChild(node);
+    if (dateText) node.querySelector('.day-date').textContent = dateText;
+    pages.insertBefore(node, document.getElementById('rollingPage'));
     renumber();
     return node;
   }
 
   function renumber(){
     var days = pages.querySelectorAll('.page.day');
+    var total = String(days.length + 3).padStart(2, '0'); // cover + days + rolling + back
     days.forEach(function(p, i){
       var n = String(i + 1).padStart(2, '0');
-      var total = String(days.length).padStart(2, '0');
       p.querySelector('.day-num').textContent = 'DAY_' + n;
-      p.querySelector('.pageno').textContent = 'P.' + n + '/' + total;
+      p.querySelector('.pageno').textContent = 'P.' + String(i + 2).padStart(2, '0') + '/' + total;
     });
+    document.getElementById('rpNo').textContent = 'P.' + String(days.length + 2).padStart(2, '0') + '/' + total;
+    document.getElementById('backNo').textContent = 'P.' + total + '/' + total;
   }
 
   // downscale via canvas so 13 photos/page stay light + print sharp
@@ -720,8 +956,9 @@ body.edit-mode [contenteditable]{
   });
   document.body.classList.add('edit-mode'); // start with editable fields visible
 
-  addDay(); // DAY_01
-  addDay(); // DAY_02
+  // 5-day trip: DAY_01–05 prefilled
+  ['2026.07.26_SUN','2026.07.27_MON','2026.07.28_TUE','2026.07.29_WED','2026.07.30_THU']
+    .forEach(function(d){ addDay(d); });
 })();
 </script>
 </body>
