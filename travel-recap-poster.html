@@ -463,7 +463,12 @@ body.edit-mode [contenteditable]{
 }
 .bp-return b{color:var(--ku)}
 .names{
-  display:flex;flex-wrap:wrap;justify-content:center;gap:3mm;max-width:158mm;
+  display:flex;flex-direction:column;align-items:center;gap:3.5mm;
+}
+.names-rest{display:flex;flex-wrap:wrap;justify-content:center;gap:3mm;max-width:158mm}
+.name-tag.prof{
+  font-size:12pt;padding:2mm 7mm;border-color:var(--ku);
+  box-shadow:3px 3px 0 var(--butter);transform:rotate(-1deg);
 }
 .name-tag{
   font-family:var(--hand);font-weight:700;font-size:10pt;color:var(--ink);
@@ -471,9 +476,9 @@ body.edit-mode [contenteditable]{
   padding:1.5mm 4.5mm;min-width:26mm;text-align:center;
   box-shadow:2px 2px 0 var(--pink);transform:rotate(-1.5deg);
 }
-.names .name-tag:nth-child(4n+2){border-color:var(--hot);box-shadow:2px 2px 0 var(--butter);transform:rotate(1.5deg)}
-.names .name-tag:nth-child(4n+3){border-color:#4a9de0;box-shadow:2px 2px 0 var(--sky);transform:rotate(-1deg)}
-.names .name-tag:nth-child(4n){border-color:#f0a636;box-shadow:2px 2px 0 var(--mint);transform:rotate(1deg)}
+.names-rest .name-tag:nth-child(4n+2){border-color:var(--hot);box-shadow:2px 2px 0 var(--butter);transform:rotate(1.5deg)}
+.names-rest .name-tag:nth-child(4n+3){border-color:#4a9de0;box-shadow:2px 2px 0 var(--sky);transform:rotate(-1deg)}
+.names-rest .name-tag:nth-child(4n){border-color:#f0a636;box-shadow:2px 2px 0 var(--mint);transform:rotate(1deg)}
 
 /* day delete (screen only) */
 .day-del{
@@ -795,7 +800,8 @@ body.edit-mode [contenteditable]{
       </div>
       <div class="bp-return">BOARDING PASS · <b>RMQ ✈ ICN</b></div>
       <div class="names">
-        <span class="name-tag" contenteditable>Prof. Hyungjo Hur</span>
+        <div class="names-top"><span class="name-tag prof" contenteditable>Prof. Hyungjo Hur ♥</span></div>
+        <div class="names-rest">
         <span class="name-tag" contenteditable data-ph="이름_"></span>
         <span class="name-tag" contenteditable data-ph="이름_"></span>
         <span class="name-tag" contenteditable data-ph="이름_"></span>
@@ -805,6 +811,7 @@ body.edit-mode [contenteditable]{
         <span class="name-tag" contenteditable data-ph="이름_"></span>
         <span class="name-tag" contenteditable data-ph="이름_"></span>
         <span class="name-tag" contenteditable data-ph="이름_"></span>
+        </div>
       </div>
     </div>
 
