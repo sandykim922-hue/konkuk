@@ -239,29 +239,26 @@ body.edit-mode [contenteditable]{
 }
 .pageno{flex:none;color:var(--hot);font-weight:700}
 
-/* ══ COVER — scrapbook collage ══════════════════ */
-.cover .collage{flex:1;min-height:0;position:relative;margin-top:4mm}
-/* photobooth strip: 4 uploadable frames */
-.pb-strip{
-  position:absolute;top:1mm;left:1mm;width:35mm;bottom:4mm;
-  background:var(--frame);padding:2mm;
-  display:flex;flex-direction:column;gap:2mm;
-  transform:rotate(-1.5deg);box-shadow:0 1.5mm 4mm rgba(38,38,38,.35);z-index:3;
+/* ══ COVER — no-photo kitsch collage ════════════ */
+.cover .collage{flex:1;min-height:0;position:relative;margin-top:3mm}
+/* flight route line */
+.route{
+  position:absolute;top:2mm;left:2mm;right:2mm;
+  display:flex;align-items:center;gap:2.5mm;z-index:4;
 }
-.pb-strip .slot{flex:1;padding:1mm;background:#fff}
-.pb-strip .slot::before{display:none}
-.pb-strip .cap{color:#fff;font-size:6pt;min-height:4mm;padding:.6mm 0 .8mm}
-/* main polaroid */
-.hero-main{
-  position:absolute;top:14mm;left:41mm;width:92mm;height:96mm;
-  transform:rotate(-2deg);background:#ffeef7;padding:2.5mm 2.5mm 0;z-index:4;
+.route .pill{
+  font-size:10.5pt;font-weight:700;color:var(--ku);background:#fff;flex:none;
+  border:2px solid var(--ku);border-radius:5mm;padding:1mm 4mm;
+  box-shadow:2px 2px 0 var(--pink);
 }
-.hero-main .cap{font-size:8.5pt;min-height:8mm}
+.route .rt-line{flex:1;border-top:2.5px dashed var(--ku);position:relative;height:0}
+.route .rt-line .plane{position:absolute;top:-5.5mm;left:45%;font-size:13pt;transform:rotate(8deg)}
+.route .rt-line .hp{position:absolute;top:-4mm;font-size:8.5pt;color:var(--hot)}
 /* orange transit ticket */
 .tw-ticket{
-  position:absolute;top:2mm;right:0;width:58mm;
+  position:absolute;top:17mm;left:1mm;width:62mm;
   background:var(--peach);box-shadow:0 1mm 3mm rgba(38,38,38,.3);
-  transform:rotate(1.5deg);font-size:7pt;z-index:3;
+  transform:rotate(-3deg);font-size:7pt;z-index:3;
 }
 .tw-ticket .tt-head{
   background:#f0803c;color:#fff;font-weight:700;
@@ -270,10 +267,47 @@ body.edit-mode [contenteditable]{
 .tw-ticket .tt-body{padding:2mm 3mm;display:flex;flex-direction:column;gap:1mm;background:#fff}
 .tw-ticket .tt-body b{color:#f0803c}
 .tw-ticket .tt-body .kr-line{font-family:var(--kr)}
+/* luggage tag */
+.tag{
+  position:absolute;top:19mm;right:2mm;width:58mm;
+  background:var(--butter);border:2px solid var(--ku);border-radius:2.5mm;
+  padding:2.5mm 3mm 2.5mm 11mm;transform:rotate(3deg);z-index:3;
+  font-size:7.5pt;line-height:1.6;box-shadow:0 1mm 3mm rgba(38,38,38,.25);
+}
+.tag::before{
+  content:"";position:absolute;left:3.5mm;top:50%;transform:translateY(-50%);
+  width:4mm;height:4mm;border-radius:50%;background:var(--cream);
+  box-shadow:0 0 0 1.3mm #fff,0 0 0 2mm var(--ku);
+}
+.tag b{color:var(--ku);font-size:9.5pt}
+.tag .kr-line{font-family:var(--kr);font-weight:700}
+/* weather sticker */
+.weather{
+  position:absolute;top:42mm;left:7mm;width:23mm;height:23mm;border-radius:50%;
+  background:var(--sky);border:2px solid #4a9de0;z-index:4;transform:rotate(-7deg);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font-size:9pt;font-weight:700;color:#1d5c96;box-shadow:2.5px 2.5px 0 var(--pink);
+}
+.weather small{font-size:5.5pt;letter-spacing:.14em}
+/* center patch badge */
+.badge{
+  position:absolute;top:50mm;left:50%;transform:translateX(-50%) rotate(-5deg);
+  width:62mm;height:62mm;border-radius:50%;background:var(--hot);z-index:5;
+  display:grid;place-items:center;text-align:center;
+  box-shadow:0 1.5mm 4mm rgba(38,38,38,.3);
+}
+.badge .inner{
+  width:54mm;height:54mm;border-radius:50%;border:2.5px dashed #fff;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2mm;
+  color:#fff;
+}
+.badge .b1{font-size:7.5pt;letter-spacing:.22em}
+.badge .b2{font-size:15pt;font-weight:700;line-height:1.2}
+.badge .b3{font-family:var(--kr);font-size:9pt;font-weight:800;background:#fff;color:var(--hot);padding:.6mm 3mm;border-radius:4mm}
 /* EasyCard 悠遊卡 */
 .easycard{
-  position:absolute;top:52mm;right:4mm;width:54mm;height:32mm;
-  border-radius:2.5mm;z-index:4;transform:rotate(3deg);
+  position:absolute;top:82mm;right:2mm;width:54mm;height:32mm;
+  border-radius:2.5mm;z-index:4;transform:rotate(4deg);
   background:linear-gradient(135deg,var(--ku) 0%,#2f9e6a 55%,#8fd7b0 100%);
   color:#fff;padding:3mm;box-shadow:0 1.5mm 4mm rgba(38,38,38,.35);
   display:flex;flex-direction:column;justify-content:space-between;
@@ -283,25 +317,49 @@ body.edit-mode [contenteditable]{
 .easycard .ec-chip{width:8mm;height:6mm;border-radius:1mm;background:linear-gradient(135deg,#ffe9a8,#e0b94f)}
 /* night market card */
 .nm-card{
-  position:absolute;top:92mm;right:1mm;width:56mm;bottom:6mm;
+  position:absolute;bottom:1mm;left:1mm;width:58mm;height:42mm;
   background:#fffdf6;border:1.5px solid var(--ink);z-index:3;
   transform:rotate(-2deg);box-shadow:0 1mm 3mm rgba(38,38,38,.3);
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5mm;
   text-align:center;padding:3mm;
 }
-.nm-card .nm-big{font-size:15pt;font-weight:700;color:var(--ink);letter-spacing:.1em}
+.nm-card .nm-big{font-size:14pt;font-weight:700;color:var(--ink);letter-spacing:.1em}
 .nm-card .nm-kr{font-family:var(--kr);font-size:8pt;font-weight:700;color:var(--air-r)}
 .nm-card .nm-rule{width:80%;border-top:1.5px dashed var(--ink);margin:1mm 0}
 .nm-card .nm-small{font-size:6pt;letter-spacing:.2em;color:#8a857b}
-/* big cover stickers */
+/* boba shop receipt */
+.receipt{
+  position:absolute;bottom:0;right:4mm;width:50mm;z-index:4;
+  background:#fff;transform:rotate(2deg);
+  box-shadow:0 1mm 3mm rgba(38,38,38,.3);
+  font-size:7pt;padding:2.5mm 3.5mm;
+  border-top:2px dashed #cfc9bd;border-bottom:2px dashed #cfc9bd;
+}
+.receipt .rc-title{text-align:center;font-weight:700;letter-spacing:.18em;color:var(--ku);
+  border-bottom:1.5px dashed #cfc9bd;padding-bottom:1mm;margin-bottom:1.2mm}
+.receipt .row{display:flex;justify-content:space-between;font-family:var(--kr);line-height:1.7}
+.receipt .total{border-top:1.5px dashed #cfc9bd;margin-top:1.2mm;padding-top:1.2mm;
+  font-weight:700;color:var(--hot);display:flex;justify-content:space-between}
+/* cute text stickers */
+.txt-st{
+  position:absolute;z-index:6;font-family:var(--kr);font-weight:900;
+  color:var(--ku);background:#fff;border:2px solid var(--hot);border-radius:6mm;
+  padding:1.5mm 4mm;font-size:10.5pt;box-shadow:2.5px 2.5px 0 var(--butter);
+}
+.txt-st.mono{font-family:var(--mono);font-weight:700;font-size:8pt;letter-spacing:.1em;
+  border-color:var(--ku);box-shadow:2.5px 2.5px 0 var(--pink);color:var(--hot)}
+/* big emoji stickers */
 .cover .big-st{position:absolute;z-index:7;display:grid;place-items:center;border-radius:50%;background:#fff}
-.bs-cro{top:-3mm;left:64mm;width:15mm;height:15mm;font-size:15pt;border:1.5px solid #e0b94f;box-shadow:2px 2px 0 var(--butter);transform:rotate(-8deg)}
-.bs-boba{top:104mm;left:30mm;width:14mm;height:14mm;font-size:13pt;border:1.5px solid var(--ku);box-shadow:2px 2px 0 var(--mint);transform:rotate(6deg)}
-.bs-dump{top:118mm;left:118mm;width:13mm;height:13mm;font-size:12pt;border:1.5px solid var(--hot);box-shadow:2px 2px 0 var(--pink);transform:rotate(-5deg)}
+.bs-boba{top:44mm;left:36mm;width:15mm;height:15mm;font-size:14pt;border:1.5px solid var(--ku);box-shadow:2px 2px 0 var(--mint);transform:rotate(-8deg)}
+.bs-dump{top:88mm;left:14mm;width:13mm;height:13mm;font-size:12pt;border:1.5px solid var(--hot);box-shadow:2px 2px 0 var(--pink);transform:rotate(6deg)}
+.bs-pine{top:48mm;right:32mm;width:14mm;height:14mm;font-size:13pt;border:1.5px solid #e0b94f;box-shadow:2px 2px 0 var(--butter);transform:rotate(9deg)}
+.bs-palm{bottom:48mm;left:64mm;width:13mm;height:13mm;font-size:12pt;border:1.5px solid var(--ku);box-shadow:2px 2px 0 var(--sky);transform:rotate(-5deg)}
+.bs-cam{bottom:52mm;right:10mm;width:13mm;height:13mm;font-size:12pt;border:1.5px solid #4a9de0;box-shadow:2px 2px 0 var(--sky);transform:rotate(7deg)}
+.bs-duck{bottom:46mm;left:38mm;width:14mm;height:14mm;font-size:13pt;border:1.5px solid #f0a636;box-shadow:2px 2px 0 var(--butter);transform:rotate(-9deg)}
 /* cover envelope with title */
 .cover-env{position:relative;flex:none;margin:2mm 1mm 0}
 .cover-env .airmail-inner{
-  position:relative;display:block;min-height:56mm;padding:4mm 5mm;
+  position:relative;display:block;min-height:58mm;padding:4mm 5mm;
 }
 .env-addr{font-size:7.5pt;letter-spacing:.08em;color:#8a857b;line-height:2}
 .env-addr b{color:var(--ink)}
@@ -392,76 +450,21 @@ body.edit-mode [contenteditable]{
 
   <!-- ═══ COVER ═══ -->
   <section class="page cover">
-    <span class="spark sp-a" style="top:4mm;left:44mm">♥</span>
-    <span class="spark sp-b" style="top:56mm;left:38mm">✦</span>
-    <span class="spark sp-c" style="top:130mm;right:62mm;font-size:14pt">☆</span>
-    <span class="spark sp-d" style="top:88mm;left:39mm">✈</span>
-    <span class="spark sp-a" style="bottom:70mm;right:60mm;font-size:13pt">✦</span>
-    <span class="spark sp-b" style="bottom:8mm;left:8mm">♥</span>
-    <span class="spark sp-c" style="top:40mm;right:60mm">⋆</span>
-    <span class="spark sp-d" style="bottom:10mm;right:8mm">☆</span>
-    <span class="tape-bit" style="top:44mm;right:24mm;transform:rotate(40deg)"></span>
-    <span class="tape-bit y" style="top:150mm;left:60mm;transform:rotate(-30deg)"></span>
+    <span class="spark sp-a" style="top:4mm;left:70mm">♥</span>
+    <span class="spark sp-b" style="top:64mm;left:4mm">✦</span>
+    <span class="spark sp-c" style="top:96mm;right:6mm;font-size:14pt">☆</span>
+    <span class="spark sp-d" style="top:130mm;left:5mm">✈</span>
+    <span class="spark sp-a" style="top:150mm;right:64mm;font-size:13pt">✦</span>
+    <span class="spark sp-b" style="bottom:64mm;left:70mm">♥</span>
+    <span class="spark sp-c" style="top:118mm;left:56mm">⋆</span>
+    <span class="spark sp-d" style="bottom:40mm;right:60mm">☆</span>
+    <span class="spark sp-a" style="bottom:8mm;left:66mm">♥</span>
+    <span class="spark sp-b" style="top:180mm;right:8mm">✦</span>
+    <span class="tape-bit" style="top:92mm;left:30mm;transform:rotate(40deg)"></span>
+    <span class="tape-bit y" style="top:160mm;right:30mm;transform:rotate(-30deg)"></span>
+    <span class="tape-bit b" style="bottom:34mm;left:44mm;transform:rotate(20deg)"></span>
 
-    <header class="ticket-head">
-      <div class="repeat-row">KONKUK KONKUK KONKUK KONKUK KONKUK KONKUK KONKUK KONKUK KONKUK KONKUK KONKUK KONKUK KONKUK</div>
-      <div class="main-row">
-        <span class="admit">ADMIT ONE ★</span>
-        <span class="day-num" style="font-size:15pt">TAIWAN 2026 ✈</span>
-        <span class="day-date">DEPT. OF PUBLIC ADMIN.</span>
-        <span class="mini-code" aria-hidden="true"></span>
-      </div>
-    </header>
-
-    <div class="collage">
-      <!-- 네컷 스트립 -->
-      <div class="pb-strip">
-        <figure class="slot" tabindex="0"><div class="ph"><img alt=""><button class="del">×</button><span class="hint">+1</span></div><figcaption class="cap" contenteditable data-ph="캡션_"></figcaption></figure>
-        <figure class="slot" tabindex="0"><div class="ph"><img alt=""><button class="del">×</button><span class="hint">+2</span></div><figcaption class="cap" contenteditable data-ph="캡션_"></figcaption></figure>
-        <figure class="slot" tabindex="0"><div class="ph"><img alt=""><button class="del">×</button><span class="hint">+3</span></div><figcaption class="cap" contenteditable data-ph="캡션_"></figcaption></figure>
-        <figure class="slot" tabindex="0"><div class="ph"><img alt=""><button class="del">×</button><span class="hint">+4</span></div><figcaption class="cap" contenteditable data-ph="캡션_"></figcaption></figure>
-      </div>
-
-      <!-- 메인 폴라로이드 -->
-      <figure class="slot hero-main" tabindex="0">
-        <div class="ph"><img alt=""><button class="del" title="사진 제거">×</button>
-        <span class="hint">+ MAIN PHOTO</span></div>
-        <figcaption class="cap" contenteditable data-ph="단체 사진 캡션_"></figcaption>
-      </figure>
-
-      <!-- 오렌지 티켓 -->
-      <div class="tw-ticket">
-        <div class="tt-head">Anytime Day Single</div>
-        <div class="tt-body">
-          <span>Valid for one journey from</span>
-          <span><b>INCHEON (ICN)</b> to <b>TAICHUNG (RMQ)</b></span>
-          <span class="kr-line" contenteditable data-ph="2026.07.26 — 07.31 · 5박 6일_"></span>
-        </div>
-      </div>
-
-      <!-- 대만 교통카드 -->
-      <div class="easycard">
-        <div class="ec-chip"></div>
-        <div>
-          <div class="ec-name">悠遊卡 EasyCard</div>
-          <div class="ec-sub">TAICHUNG ★ KONKUK PA</div>
-        </div>
-      </div>
-
-      <!-- 야시장 카드 -->
-      <div class="nm-card">
-        <span class="nm-big">NIGHT<br>MARKET</span>
-        <span class="nm-rule"></span>
-        <span class="nm-kr">逢甲夜市 · 야시장은 진리</span>
-        <span class="nm-small">ZHENGZHI ★ SPEAKS</span>
-      </div>
-
-      <span class="big-st bs-cro">🥐</span>
-      <span class="big-st bs-boba">🧋</span>
-      <span class="big-st bs-dump">🥟</span>
-    </div>
-
-    <!-- 에어메일 봉투 + 타이틀 -->
+    <!-- ① 타이틀 봉투 (맨 위) -->
     <div class="airmail cover-env">
       <div class="airmail-inner">
         <div class="env-addr">
@@ -477,6 +480,85 @@ body.edit-mode [contenteditable]{
         </div>
       </div>
     </div>
+
+    <!-- ② 키치 콜라주 (사진 없음) -->
+    <div class="collage">
+      <div class="route">
+        <span class="pill">ICN</span>
+        <span class="rt-line"><span class="plane">✈</span><span class="hp" style="left:20%">♥</span><span class="hp" style="left:70%">♥</span></span>
+        <span class="pill">RMQ</span>
+      </div>
+
+      <div class="tw-ticket">
+        <div class="tt-head">Anytime Day Single</div>
+        <div class="tt-body">
+          <span>Valid for one journey from</span>
+          <span><b>INCHEON (ICN)</b> to <b>TAICHUNG (RMQ)</b></span>
+          <span class="kr-line" contenteditable data-ph="2026.07.26 — 07.31 · 5박 6일_"></span>
+        </div>
+      </div>
+
+      <div class="tag">
+        <b>LUGGAGE TAG ✈</b><br>
+        KONKUK PA · ICN → RMQ<br>
+        <span class="kr-line" contenteditable data-ph="이름을 적어주세요_"></span>
+      </div>
+
+      <div class="weather">☀ 33°C<small>TAICHUNG</small></div>
+
+      <div class="badge">
+        <div class="inner">
+          <span class="b1">★ EST. 2026 ★</span>
+          <span class="b2">KONKUK<br>♥<br>TAIWAN</span>
+          <span class="b3">행정학과</span>
+        </div>
+      </div>
+
+      <div class="easycard">
+        <div class="ec-chip"></div>
+        <div>
+          <div class="ec-name">悠遊卡 EasyCard</div>
+          <div class="ec-sub">TAICHUNG ★ KONKUK PA</div>
+        </div>
+      </div>
+
+      <span class="txt-st" style="top:118mm;left:6mm;transform:rotate(-3deg)">여름! 대만! 우리! ♥</span>
+      <span class="txt-st mono" style="top:124mm;right:4mm;transform:rotate(2deg)">NO SLEEP JUST VIBES</span>
+
+      <div class="nm-card">
+        <span class="nm-big">NIGHT<br>MARKET</span>
+        <span class="nm-rule"></span>
+        <span class="nm-kr">逢甲夜市 · 야시장은 진리</span>
+        <span class="nm-small">TAICHUNG ★ SPEAKS</span>
+      </div>
+
+      <div class="receipt">
+        <div class="rc-title">★ BOBA RECEIPT ★</div>
+        <div class="row"><span>珍珠奶茶 버블티</span><span>×6</span></div>
+        <div class="row"><span>小籠包 샤오롱바오</span><span>×20</span></div>
+        <div class="row"><span>烤鴨 오리구이</span><span>×1</span></div>
+        <div class="row"><span>鳳梨酥 펑리수</span><span>×∞</span></div>
+        <div class="total"><span>TOTAL</span><span>행복 100%</span></div>
+      </div>
+
+      <span class="big-st bs-boba">🧋</span>
+      <span class="big-st bs-dump">🥟</span>
+      <span class="big-st bs-pine">🍍</span>
+      <span class="big-st bs-palm">🌴</span>
+      <span class="big-st bs-cam">📸</span>
+      <span class="big-st bs-duck">🦆</span>
+    </div>
+
+    <!-- ③ 티켓 스트립 (아래로 이동) -->
+    <header class="ticket-head" style="margin-top:3mm">
+      <div class="repeat-row">KONKUK KONKUK KONKUK KONKUK KONKUK KONKUK KONKUK KONKUK KONKUK KONKUK KONKUK KONKUK KONKUK</div>
+      <div class="main-row">
+        <span class="admit">ADMIT ONE ★</span>
+        <span class="day-num" style="font-size:15pt">TAIWAN 2026 ✈</span>
+        <span class="day-date">DEPT. OF PUBLIC ADMIN.</span>
+        <span class="mini-code" aria-hidden="true"></span>
+      </div>
+    </header>
 
     <div class="airmail" style="margin-top:2.5mm">
       <div class="airmail-inner">
