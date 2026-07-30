@@ -292,18 +292,18 @@ body.edit-mode [contenteditable]{
 /* center patch badge */
 .badge{
   position:absolute;top:50mm;left:50%;transform:translateX(-50%) rotate(-5deg);
-  width:62mm;height:62mm;border-radius:50%;background:var(--hot);z-index:5;
+  width:66mm;height:66mm;border-radius:50%;background:var(--hot);z-index:5;
   display:grid;place-items:center;text-align:center;
   box-shadow:0 1.5mm 4mm rgba(38,38,38,.3);
 }
 .badge .inner{
-  width:54mm;height:54mm;border-radius:50%;border:2.5px dashed #fff;
+  width:58mm;height:58mm;border-radius:50%;border:2.5px dashed #fff;
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2mm;
   color:#fff;
 }
 .badge .b1{font-size:7.5pt;letter-spacing:.22em}
-.badge .b2{font-size:15pt;font-weight:700;line-height:1.2}
-.badge .b3{font-family:var(--kr);font-size:9pt;font-weight:800;background:#fff;color:var(--hot);padding:.6mm 3mm;border-radius:4mm}
+.badge .b2{font-size:19pt;font-weight:800;line-height:1.15}
+.badge .b3{font-size:6.5pt;font-weight:700;letter-spacing:.12em;background:#fff;color:var(--hot);padding:.8mm 3mm;border-radius:4mm}
 /* EasyCard 悠遊卡 */
 .easycard{
   position:absolute;top:82mm;right:2mm;width:54mm;height:32mm;
@@ -315,18 +315,6 @@ body.edit-mode [contenteditable]{
 .easycard .ec-name{font-size:11pt;font-weight:700;letter-spacing:.06em}
 .easycard .ec-sub{font-size:6.5pt;opacity:.85;letter-spacing:.14em}
 .easycard .ec-chip{width:8mm;height:6mm;border-radius:1mm;background:linear-gradient(135deg,#ffe9a8,#e0b94f)}
-/* night market card */
-.nm-card{
-  position:absolute;bottom:1mm;left:1mm;width:58mm;height:42mm;
-  background:#fffdf6;border:1.5px solid var(--ink);z-index:3;
-  transform:rotate(-2deg);box-shadow:0 1mm 3mm rgba(38,38,38,.3);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.5mm;
-  text-align:center;padding:3mm;
-}
-.nm-card .nm-big{font-size:14pt;font-weight:700;color:var(--ink);letter-spacing:.1em}
-.nm-card .nm-kr{font-family:var(--kr);font-size:8pt;font-weight:700;color:var(--air-r)}
-.nm-card .nm-rule{width:80%;border-top:1.5px dashed var(--ink);margin:1mm 0}
-.nm-card .nm-small{font-size:6pt;letter-spacing:.2em;color:#8a857b}
 /* boba shop receipt */
 .receipt{
   position:absolute;bottom:0;right:4mm;width:50mm;z-index:4;
@@ -356,6 +344,10 @@ body.edit-mode [contenteditable]{
 .bs-palm{bottom:48mm;left:64mm;width:13mm;height:13mm;font-size:12pt;border:1.5px solid var(--ku);box-shadow:2px 2px 0 var(--sky);transform:rotate(-5deg)}
 .bs-cam{bottom:52mm;right:10mm;width:13mm;height:13mm;font-size:12pt;border:1.5px solid #4a9de0;box-shadow:2px 2px 0 var(--sky);transform:rotate(7deg)}
 .bs-duck{bottom:46mm;left:38mm;width:14mm;height:14mm;font-size:13pt;border:1.5px solid #f0a636;box-shadow:2px 2px 0 var(--butter);transform:rotate(-9deg)}
+.bs-sun{bottom:8mm;left:8mm;width:21mm;height:21mm;font-size:20pt;border:2px solid #f0a636;box-shadow:2.5px 2.5px 0 var(--butter);transform:rotate(-7deg)}
+.bs-melon{bottom:27mm;left:28mm;width:15mm;height:15mm;font-size:14pt;border:1.5px solid var(--hot);box-shadow:2px 2px 0 var(--pink);transform:rotate(8deg)}
+.bs-wave{bottom:5mm;left:33mm;width:13mm;height:13mm;font-size:12pt;border:1.5px solid #4a9de0;box-shadow:2px 2px 0 var(--sky);transform:rotate(-4deg)}
+.bs-ice{top:118mm;left:10mm;width:14mm;height:14mm;font-size:13pt;border:1.5px solid var(--hot);box-shadow:2px 2px 0 var(--sky);transform:rotate(6deg)}
 /* cover envelope with title */
 .cover-env{position:relative;flex:none;margin:2mm 1mm 0}
 .cover-env .airmail-inner{
@@ -510,7 +502,7 @@ body.edit-mode [contenteditable]{
         <div class="inner">
           <span class="b1">★ EST. 2026 ★</span>
           <span class="b2">KONKUK<br>♥<br>TAIWAN</span>
-          <span class="b3">행정학과</span>
+          <span class="b3">PUBLIC ADMINISTRATION</span>
         </div>
       </div>
 
@@ -522,20 +514,12 @@ body.edit-mode [contenteditable]{
         </div>
       </div>
 
-      <span class="txt-st" style="top:118mm;left:6mm;transform:rotate(-3deg)">여름! 대만! 우리! ♥</span>
       <span class="txt-st mono" style="top:124mm;right:4mm;transform:rotate(2deg)">NO SLEEP JUST VIBES</span>
-
-      <div class="nm-card">
-        <span class="nm-big">NIGHT<br>MARKET</span>
-        <span class="nm-rule"></span>
-        <span class="nm-kr">逢甲夜市 · 야시장은 진리</span>
-        <span class="nm-small">TAICHUNG ★ SPEAKS</span>
-      </div>
 
       <div class="receipt">
         <div class="rc-title">★ BOBA RECEIPT ★</div>
-        <div class="row"><span>珍珠奶茶 버블티</span><span>×6</span></div>
-        <div class="row"><span>小籠包 샤오롱바오</span><span>×20</span></div>
+        <div class="row"><span>珍珠奶茶 버블티</span><span>×32</span></div>
+        <div class="row"><span>牛肉麵 우육면</span><span>×6</span></div>
         <div class="row"><span>烤鴨 오리구이</span><span>×1</span></div>
         <div class="row"><span>鳳梨酥 펑리수</span><span>×∞</span></div>
         <div class="total"><span>TOTAL</span><span>행복 100%</span></div>
@@ -547,6 +531,10 @@ body.edit-mode [contenteditable]{
       <span class="big-st bs-palm">🌴</span>
       <span class="big-st bs-cam">📸</span>
       <span class="big-st bs-duck">🦆</span>
+      <span class="big-st bs-sun">☀️</span>
+      <span class="big-st bs-melon">🍉</span>
+      <span class="big-st bs-wave">🌊</span>
+      <span class="big-st bs-ice">🍧</span>
     </div>
 
     <!-- ③ 티켓 스트립 (아래로 이동) -->
