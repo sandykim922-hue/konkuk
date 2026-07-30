@@ -56,6 +56,10 @@ body{
 .toolbar button:hover{filter:brightness(1.08)}
 .toolbar button:focus-visible,.slot:focus-visible{outline:2px solid var(--hot);outline-offset:2px}
 .toolbar .hint{font-size:11px;color:rgba(11,61,42,.6);font-family:var(--kr)}
+.toolbar .help{font-family:var(--kr);font-size:12px;flex-basis:100%}
+.toolbar .help summary{cursor:pointer;font-weight:700;color:var(--ku)}
+.toolbar .help ol{margin:8px 0 4px 22px;line-height:1.8;color:var(--ink)}
+.toolbar .help b{color:var(--hot)}
 
 /* ── page = A4 = framed plaid board ────────────── */
 .pages{display:flex;flex-direction:column;align-items:center;gap:28px;padding:28px 10px 80px}
@@ -116,6 +120,11 @@ body{
 }
 [contenteditable]:empty::before{content:attr(data-ph);opacity:.35}
 [contenteditable]:focus{outline:1.5px dashed var(--hot);outline-offset:2px}
+/* edit mode: highlight every editable text field */
+body.edit-mode [contenteditable]{
+  outline:1.5px dashed rgba(255,127,192,.85);outline-offset:1px;
+  background:rgba(255,255,255,.5);border-radius:1px;
+}
 
 /* ── title strip + stickers ────────────────────── */
 .head{position:relative;flex:none;display:flex;align-items:center;gap:3mm;padding:3.5mm 1mm 3mm}
@@ -241,7 +250,7 @@ body{
 }
 .pb-strip .slot{flex:1;padding:1mm;background:#fff}
 .pb-strip .slot::before{display:none}
-.pb-strip .cap{display:none}
+.pb-strip .cap{color:#fff;font-size:6pt;min-height:4mm;padding:.6mm 0 .8mm}
 /* main polaroid */
 .hero-main{
   position:absolute;top:14mm;left:41mm;width:92mm;height:96mm;
@@ -353,8 +362,20 @@ body{
 <div class="toolbar">
   <span class="logo">KONKUK<em>✈TAIWAN</em>.RECAP_</span>
   <button id="addDay">+ ADD DAY</button>
+  <button id="editBtn" class="ghost">✎ 편집표시 ON</button>
   <button id="printBtn" class="ghost">⎙ PRINT</button>
-  <span class="hint">사진 슬롯 클릭 → 업로드(여러 장 선택 가능) · 텍스트는 클릭해서 수정 · 인쇄 설정: A4 / 여백 없음 / 배경 그래픽 ON</span>
+  <span class="hint">분홍 점선 = 클릭해서 글자 입력 가능한 곳</span>
+  <details class="help">
+    <summary>❓ 사용법 (수정 · 인쇄)</summary>
+    <ol>
+      <li><b>사진 넣기</b> — 사진 칸을 클릭하면 파일 선택창이 열립니다. 여러 장을 한 번에 선택하면 그 페이지의 빈 칸에 순서대로 자동 배치됩니다. 넣은 사진을 다시 클릭하면 교체, 사진 위 <b>×</b> 버튼으로 삭제.</li>
+      <li><b>글자 수정</b> — 분홍 점선으로 표시된 곳(날짜·제목·캡션·메모 등)을 클릭하고 바로 타이핑하세요. 위의 <b>✎ 편집표시</b> 버튼으로 표시를 켜고 끌 수 있습니다.</li>
+      <li><b>캡션</b> — 모든 사진 아래 흰 여백을 클릭하면 캡션을 쓸 수 있습니다 (표지 네컷 스트립 포함).</li>
+      <li><b>날짜 추가/삭제</b> — <b>+ ADD DAY</b>로 하루 추가, 각 페이지 오른쪽 위 <b>DEL ×</b>로 삭제.</li>
+      <li><b>인쇄</b> — <b>⎙ PRINT</b> 클릭 → 인쇄 설정에서 <b>용지 A4 · 여백 없음 · 배경 그래픽(배경 색상 및 이미지) 켜기</b>. PDF로 저장하려면 대상을 "PDF로 저장"으로 선택.</li>
+      <li><b>주의</b> — 사진과 글은 저장되지 않으니, 완성한 그 자리에서 바로 인쇄하거나 PDF로 저장하세요.</li>
+    </ol>
+  </details>
 </div>
 
 <main class="pages" id="pages">
@@ -385,10 +406,10 @@ body{
     <div class="collage">
       <!-- 네컷 스트립 -->
       <div class="pb-strip">
-        <figure class="slot" tabindex="0"><div class="ph"><img alt=""><button class="del">×</button><span class="hint">+1</span></div><figcaption class="cap"></figcaption></figure>
-        <figure class="slot" tabindex="0"><div class="ph"><img alt=""><button class="del">×</button><span class="hint">+2</span></div><figcaption class="cap"></figcaption></figure>
-        <figure class="slot" tabindex="0"><div class="ph"><img alt=""><button class="del">×</button><span class="hint">+3</span></div><figcaption class="cap"></figcaption></figure>
-        <figure class="slot" tabindex="0"><div class="ph"><img alt=""><button class="del">×</button><span class="hint">+4</span></div><figcaption class="cap"></figcaption></figure>
+        <figure class="slot" tabindex="0"><div class="ph"><img alt=""><button class="del">×</button><span class="hint">+1</span></div><figcaption class="cap" contenteditable data-ph="캡션_"></figcaption></figure>
+        <figure class="slot" tabindex="0"><div class="ph"><img alt=""><button class="del">×</button><span class="hint">+2</span></div><figcaption class="cap" contenteditable data-ph="캡션_"></figcaption></figure>
+        <figure class="slot" tabindex="0"><div class="ph"><img alt=""><button class="del">×</button><span class="hint">+3</span></div><figcaption class="cap" contenteditable data-ph="캡션_"></figcaption></figure>
+        <figure class="slot" tabindex="0"><div class="ph"><img alt=""><button class="del">×</button><span class="hint">+4</span></div><figcaption class="cap" contenteditable data-ph="캡션_"></figcaption></figure>
       </div>
 
       <!-- 메인 폴라로이드 -->
@@ -604,6 +625,12 @@ body{
     addDay().scrollIntoView({behavior:'smooth', block:'start'});
   });
   document.getElementById('printBtn').addEventListener('click', function(){ window.print(); });
+  var editBtn = document.getElementById('editBtn');
+  editBtn.addEventListener('click', function(){
+    var on = document.body.classList.toggle('edit-mode');
+    editBtn.textContent = on ? '✎ 편집표시 ON' : '✎ 편집표시 OFF';
+  });
+  document.body.classList.add('edit-mode'); // start with editable fields visible
 
   addDay(); // DAY_01
   addDay(); // DAY_02
