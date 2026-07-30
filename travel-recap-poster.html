@@ -318,20 +318,30 @@ body.edit-mode [contenteditable]{
   display:grid;place-items:center;text-align:center;
   font-size:5.5pt;letter-spacing:.08em;line-height:1.5;transform:rotate(-8deg);
 }
+/* cookie-sticker lettering: chubby rounded letters, solid pastel colors */
 .env-title{
   position:absolute;left:0;right:0;bottom:5mm;text-align:center;
-  font-family:var(--mono);font-weight:700;font-size:19pt;line-height:1.25;
-  color:#fff;letter-spacing:.01em;
-  text-shadow:
-    -1.2px -1.2px 0 var(--ku),1.2px -1.2px 0 var(--ku),
-    -1.2px 1.2px 0 var(--ku),1.2px 1.2px 0 var(--ku),
-    0 -1.6px 0 var(--ku),0 1.6px 0 var(--ku),
-    -1.6px 0 0 var(--ku),1.6px 0 0 var(--ku),
-    2.5px 3px 0 rgba(3,107,63,.35);
+  font-family:ui-rounded,'Arial Rounded MT Bold','Comic Sans MS','Trebuchet MS',sans-serif;
+  font-weight:900;font-size:22pt;line-height:1.2;letter-spacing:.03em;
 }
-.env-title .sub{display:block;font-size:10pt;letter-spacing:.16em;margin-top:1.2mm}
+.env-title .lt{
+  display:inline-block;
+  text-shadow:.8mm .9mm 0 var(--pink);
+  transform:rotate(-3deg);
+}
+.env-title .lt:nth-child(even){transform:rotate(2.5deg)}
+.env-title .c1{color:var(--ku)}
+.env-title .c2{color:var(--hot);text-shadow:.8mm .9mm 0 var(--butter)}
+.env-title .c3{color:#4a9de0;text-shadow:.8mm .9mm 0 var(--pink)}
+.env-title .c4{color:#f0a636;text-shadow:.8mm .9mm 0 var(--mint)}
+.env-title .sub{
+  display:inline-block;margin-top:2mm;
+  font-family:var(--mono);font-weight:700;font-size:8.5pt;letter-spacing:.18em;
+  color:var(--ink);background:var(--butter);padding:1mm 3mm;
+  box-shadow:2px 2px 0 var(--pink);transform:rotate(-.8deg);
+}
 .env-title .kr-eyebrow{display:block;font-family:var(--kr);font-size:8pt;font-weight:700;
-  color:var(--hot);text-shadow:none;letter-spacing:.3em;margin-bottom:1.5mm}
+  color:var(--hot);letter-spacing:.3em;margin-bottom:1.5mm}
 
 /* day delete (screen only) */
 .day-del{
@@ -463,8 +473,9 @@ body.edit-mode [contenteditable]{
         <div class="env-postmark">KONKUK<br>✈<br>2026</div>
         <div class="env-title">
           <span class="kr-eyebrow">건국대학교 행정학과</span>
-          2026 KOREA-TAIWAN
-          <span class="sub">INTERNATIONAL EXCHANGE PROGRAM</span>
+          <span class="lt c1">2</span><span class="lt c2">0</span><span class="lt c3">2</span><span class="lt c4">6</span>
+          <span class="lt c1">K</span><span class="lt c2">O</span><span class="lt c3">R</span><span class="lt c4">E</span><span class="lt c1">A</span><span class="lt c2">-</span><span class="lt c3">T</span><span class="lt c4">A</span><span class="lt c1">I</span><span class="lt c2">W</span><span class="lt c3">A</span><span class="lt c4">N</span>
+          <br><span class="sub">INTERNATIONAL EXCHANGE PROGRAM</span>
         </div>
       </div>
     </div>
