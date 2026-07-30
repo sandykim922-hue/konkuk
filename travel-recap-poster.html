@@ -25,6 +25,7 @@
   --air-b:#3b6bb0;      /* airmail blue             */
   --mono:'Space Mono','Courier New',ui-monospace,monospace;
   --kr:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;
+  --hand:'Segoe Print','Bradley Hand','Chalkboard SE','GungSeo','Gungsuh','Comic Sans MS',cursive;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
@@ -422,12 +423,12 @@ body.edit-mode [contenteditable]{
 .rp-card .slot::before{display:none}
 .rp-msg{
   flex:none;height:17.5mm;margin-top:1.5mm;padding:0 1mm;overflow:hidden;
-  font-family:var(--kr);font-size:7.5pt;line-height:5.5mm;color:var(--ink);
+  font-family:var(--hand);font-size:8.5pt;line-height:5.5mm;color:var(--ink);
   background:repeating-linear-gradient(0deg,transparent 0 5.2mm,rgba(3,107,63,.3) 5.2mm 5.5mm);
 }
 .rp-from{
-  flex:none;padding:1mm .5mm .5mm;text-align:right;
-  font-size:6.5pt;font-weight:700;color:var(--hot);letter-spacing:.06em;
+  flex:none;padding:1.2mm 1mm .8mm;text-align:right;
+  font-family:var(--hand);font-size:10.5pt;font-weight:700;color:var(--hot);letter-spacing:.04em;
 }
 
 /* ══ BACK COVER ═════════════════════════════════ */
