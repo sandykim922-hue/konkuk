@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TRAVEL.RECAP — Y2K Daily Poster</title>
+<style>
+/* ══════════════════════════════════════════════════
+   TRAVEL.RECAP — Cybercore × Y2K daily photo poster
+   1 day = 1 A4 page · 13 photo slots per day
+   ══════════════════════════════════════════════════ */
+:root{
+  --void:#050a06;       /* page ground            */
+  --moss:#0f2418;       /* panels                 */
+  --acid:#1aff8a;       /* primary neon           */
+  --cyan:#0affff;       /* chromatic offset       */
+  --ink:#2a2a2a;        /* frame-print ink        */
+  --paper:#f2fff8;      /* polaroid frame white   */
+  --pink:#ff5ecf;       /* single kitsch pop      */
+  --mono:'Space Mono','Courier New',ui-monospace,monospace;
+  --kr:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{
+  background:#020403;
+  background-image:radial-gradient(rgba(26,255,138,.06) 1px,transparent 1px);
+  background-size:22px 22px;
+  font-family:var(--mono);
+  color:var(--acid);
+}
+
+/* ── toolbar (screen only) ─────────────────────── */
+.toolbar{
+  position:sticky;top:0;z-index:50;
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+  padding:12px 18px;
+  background:rgba(5,10,6,.92);backdrop-filter:blur(6px);
+  border-bottom:1px solid rgba(26,255,138,.35);
+}
+.toolbar .logo{font-weight:700;letter-spacing:.08em;color:var(--paper)}
+.toolbar .logo em{font-style:normal;color:var(--acid)}
+.toolbar button{
+  font-family:var(--mono);font-size:13px;font-weight:700;
+  padding:8px 16px;cursor:pointer;
+  color:var(--void);background:var(--acid);
+  border:1px solid var(--acid);border-radius:2px;
+  letter-spacing:.06em;
+}
+.toolbar button.ghost{background:transparent;color:var(--cyan);border-color:rgba(10,255,255,.5)}
+.toolbar button:hover{filter:brightness(1.15)}
+.toolbar button:focus-visible,.slot:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+.toolbar .hint{font-size:11px;color:rgba(26,255,138,.55);font-family:var(--kr)}
+
+/* ── page = one day = one A4 ───────────────────── */
+.pages{display:flex;flex-direction:column;align-items:center;gap:28px;padding:28px 10px 80px}
+.page{
+  position:relative;
+  width:210mm;height:297mm;flex:none;
+  display:flex;flex-direction:column;
+  padding:7mm 7mm 5mm;
+  background:var(--void);
+  background-image:radial-gradient(rgba(26,255,138,.10) .4mm,transparent .4mm);
+  background-size:6mm 6mm;
+  box-shadow:0 0 0 1px rgba(26,255,138,.3),0 18px 60px rgba(0,0,0,.8);
+  overflow:hidden;
+}
+/* CRT scanlines — screen only, printers band on this */
+.page::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(0deg,rgba(26,255,138,.035) 0 1px,transparent 1px 4px);
+}
+/* corner registration marks */
+.page .reg{position:absolute;font-size:9pt;color:rgba(10,255,255,.5);z-index:1}
+.reg.tl{top:2mm;left:3mm}.reg.tr{top:2mm;right:3mm}
+.reg.bl{bottom:2mm;left:3mm}.reg.br{bottom:2mm;right:3mm}
+
+/* ── terminal bar ──────────────────────────────── */
+.term{
+  display:flex;align-items:center;gap:2.5mm;
+  height:8mm;padding:0 3mm;flex:none;
+  background:var(--moss);
+  border:1px solid rgba(26,255,138,.4);
+  font-size:7.5pt;letter-spacing:.04em;
+}
+.term .dot{width:2.4mm;height:2.4mm;border-radius:50%;flex:none}
+.dot.r{background:#ff4d5e}.dot.y{background:#ffd34d}.dot.g{background:var(--acid)}
+.term .path{color:var(--cyan);overflow:hidden;white-space:nowrap}
+.term .path b{color:var(--paper);font-weight:400}
+.term .rec{margin-left:auto;color:#ff4d5e;font-weight:700}
+.term .rec::before{content:"●";margin-right:1mm;animation:blink 1.2s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* ── header: glitch day number + stickers ──────── */
+.head{position:relative;flex:none;padding:4mm 1mm 3mm;display:flex;align-items:flex-end;gap:5mm}
+.day-num{
+  font-size:52pt;line-height:.9;font-weight:700;letter-spacing:-.02em;
+  color:var(--paper);transform:skew(-4deg);
+  text-shadow:1.2mm 0 var(--cyan),-1.2mm 0 var(--acid);
+}
+.head-meta{display:flex;flex-direction:column;gap:1.5mm;padding-bottom:1mm;min-width:0}
+.day-date{font-size:11pt;color:var(--cyan);letter-spacing:.12em}
+.day-title{
+  font-family:var(--kr);font-size:11pt;font-weight:700;color:var(--acid);
+  max-width:80mm;line-height:1.35;
+}
+[contenteditable]:empty::before{content:attr(data-ph);opacity:.35}
+[contenteditable]:focus{outline:1px dashed var(--cyan);outline-offset:2px}
+
+/* sticker cluster */
+.stickers{margin-left:auto;display:flex;align-items:center;gap:3mm;flex:none}
+.st-burst{
+  width:22mm;height:22mm;display:grid;place-items:center;flex:none;
+  background:var(--pink);color:var(--void);
+  font-size:8.5pt;font-weight:700;text-align:center;line-height:1.1;
+  transform:rotate(-10deg);
+  clip-path:polygon(50% 0%,57% 12%,70% 4%,71% 18%,86% 14%,81% 28%,96% 29%,86% 40%,100% 46%,88% 54%,98% 65%,83% 66%,89% 80%,74% 76%,74% 91%,61% 83%,57% 97%,50% 85%,43% 97%,39% 83%,26% 91%,26% 76%,11% 80%,17% 66%,2% 65%,12% 54%,0% 46%,14% 40%,4% 29%,19% 28%,14% 14%,29% 18%,30% 4%,43% 12%);
+}
+.st-smile{
+  width:12mm;height:12mm;border-radius:50%;display:grid;place-items:center;flex:none;
+  background:var(--acid);color:var(--void);font-size:15pt;
+  transform:rotate(8deg);box-shadow:0 0 6mm rgba(26,255,138,.5);
+}
+.st-y2k{
+  padding:1.2mm 3mm;border-radius:6mm;flex:none;
+  border:1px solid rgba(255,255,255,.6);
+  font-size:9pt;font-weight:700;letter-spacing:.1em;
+  background:linear-gradient(180deg,#fff 0%,#b8c4d0 38%,#5f6e7c 50%,#dfe8ee 62%,#fff 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  transform:rotate(-4deg);
+  text-shadow:0 0 4mm rgba(10,255,255,.35);
+}
+
+/* ── photo grid: 13 slots (4 cols × 5 rows) ────── */
+.grid{
+  flex:1;min-height:0;
+  display:grid;gap:2.6mm;
+  grid-template-columns:repeat(4,1fr);
+  grid-template-rows:repeat(5,1fr);
+  grid-auto-flow:dense;
+  padding:1mm;
+}
+.slot{
+  position:relative;display:flex;flex-direction:column;min-height:0;
+  background:var(--paper);
+  padding:1.2mm 1.2mm 0;
+  box-shadow:0 1mm 3mm rgba(0,0,0,.55);
+  cursor:pointer;border:none;text-align:inherit;
+}
+.slot:nth-child(1),.slot:nth-child(9){grid-column:span 2;grid-row:span 2}
+.slot:nth-child(6){grid-column:span 2}
+.slot:nth-child(3n+1){transform:rotate(-1.1deg)}
+.slot:nth-child(3n+2){transform:rotate(.9deg)}
+.slot:nth-child(1){transform:rotate(-1.6deg)}
+/* cyan tape on odd slots */
+.slot:nth-child(odd)::before{
+  content:"";position:absolute;top:-2mm;left:50%;transform:translateX(-50%) rotate(-2deg);
+  width:12mm;height:4mm;background:rgba(10,255,255,.4);
+  border:1px solid rgba(10,255,255,.25);z-index:2;
+}
+.ph{
+  position:relative;flex:1;min-height:0;overflow:hidden;
+  background:var(--moss);
+  display:grid;place-items:center;
+}
+.ph .hint{
+  font-size:7pt;color:rgba(26,255,138,.8);letter-spacing:.08em;text-align:center;
+  border:1px dashed rgba(26,255,138,.5);padding:1.5mm 2.5mm;
+}
+.ph img{display:none;width:100%;height:100%;object-fit:cover}
+.slot.filled .ph img{display:block}
+.slot.filled .ph .hint{display:none}
+.slot .del{
+  position:absolute;top:1mm;right:1mm;z-index:3;display:none;
+  width:5mm;height:5mm;border-radius:50%;cursor:pointer;
+  background:rgba(5,10,6,.85);color:var(--pink);border:1px solid var(--pink);
+  font-family:var(--mono);font-size:8pt;line-height:1;
+}
+.slot.filled:hover .del{display:block}
+.cap{
+  flex:none;min-height:5mm;padding:1mm .5mm 1.2mm;
+  font-family:var(--kr);font-size:6.5pt;line-height:1.3;
+  color:var(--ink);text-align:center;cursor:text;
+}
+
+/* ── marquee tape strip ────────────────────────── */
+.tape{
+  flex:none;height:7mm;margin:2.5mm 1mm 0;overflow:hidden;position:relative;
+  background:var(--acid);display:flex;align-items:center;
+}
+.tape-track{
+  display:flex;flex:none;white-space:nowrap;
+  font-size:8pt;font-weight:700;letter-spacing:.14em;color:var(--void);
+  animation:slide 18s linear infinite;
+}
+.tape-track span{padding:0 4mm}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){
+  .tape-track{animation:none}
+  .term .rec::before{animation:none}
+}
+
+/* ── footer data strip ─────────────────────────── */
+.foot{
+  flex:none;display:flex;align-items:center;gap:4mm;
+  padding:2.5mm 1mm 0;font-size:7pt;letter-spacing:.06em;
+}
+.foot .loc{color:var(--cyan)}
+.foot .memo{font-family:var(--kr);color:rgba(26,255,138,.75);min-width:0;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:70mm}
+.barcode{
+  margin-left:auto;flex:none;width:30mm;height:6mm;
+  background:
+    repeating-linear-gradient(90deg,var(--acid) 0 .5mm,transparent .5mm 1.6mm),
+    repeating-linear-gradient(90deg,var(--acid) 0 1mm,transparent 1mm 3.7mm);
+}
+.pageno{flex:none;color:var(--paper)}
+
+/* day delete (screen only) */
+.day-del{
+  position:absolute;top:2mm;right:12mm;z-index:5;
+  background:transparent;color:rgba(255,94,207,.8);
+  border:1px solid rgba(255,94,207,.5);border-radius:2px;
+  font-family:var(--mono);font-size:8pt;padding:.5mm 2mm;cursor:pointer;
+}
+
+/* ── print: 1 day = 1 clean A4 sheet ───────────── */
+@page{size:A4 portrait;margin:0}
+@media print{
+  body{background:none}
+  .toolbar,.day-del,.slot .del,.page::after{display:none!important}
+  .pages{padding:0;gap:0}
+  .page{box-shadow:none;break-after:page}
+  .tape-track{animation:none}
+  .cap:empty{visibility:hidden}
+  .slot,.ph{cursor:default}
+}
+
+/* small screens: keep A4 ratio, allow pan */
+@media (max-width:850px){
+  .pages{align-items:flex-start;overflow-x:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <span class="logo">TRAVEL<em>.RECAP</em>_</span>
+  <button id="addDay">+ ADD DAY</button>
+  <button id="printBtn" class="ghost">⎙ PRINT</button>
+  <span class="hint">사진 슬롯 클릭 → 업로드(여러 장 선택 가능) · 텍스트는 클릭해서 수정 · 인쇄 설정: A4 / 여백 없음 / 배경 그래픽 ON</span>
+</div>
+
+<main class="pages" id="pages"></main>
+
+<template id="dayTpl">
+  <section class="page">
+    <span class="reg tl">✦</span><span class="reg tr">✦</span>
+    <span class="reg bl">✦</span><span class="reg br">✦</span>
+    <button class="day-del" title="이 날짜 삭제">DEL_DAY ×</button>
+
+    <header class="term">
+      <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+      <span class="path">~/trip/<b class="term-day">day_01</b>/photos ▸ loading… ██▓▒░</span>
+      <span class="rec">REC</span>
+    </header>
+
+    <div class="head">
+      <h1 class="day-num">DAY_01</h1>
+      <div class="head-meta">
+        <div class="day-date" contenteditable data-ph="2026.07.30_WED"></div>
+        <div class="day-title" contenteditable data-ph="오늘의 한 줄 제목을 입력하세요"></div>
+      </div>
+      <div class="stickers">
+        <span class="st-y2k">Y2K</span>
+        <span class="st-smile">☻</span>
+        <span class="st-burst">BEST<br>DAY!</span>
+      </div>
+    </div>
+
+    <div class="grid"></div>
+
+    <div class="tape" aria-hidden="true">
+      <div class="tape-track">
+        <span>★ TRAVEL RECAP ★</span><span>NO SLEEP JUST VIBES</span><span>▓▒░ Y2K ░▒▓</span><span>LOADING MEMORIES…</span><span>◕‿◕</span>
+        <span>★ TRAVEL RECAP ★</span><span>NO SLEEP JUST VIBES</span><span>▓▒░ Y2K ░▒▓</span><span>LOADING MEMORIES…</span><span>◕‿◕</span>
+      </div>
+    </div>
+
+    <footer class="foot">
+      <span class="loc" contenteditable data-ph="37.5665°N_126.9780°E"></span>
+      <span class="memo" contenteditable data-ph="오늘의 메모_"></span>
+      <span class="barcode" aria-hidden="true"></span>
+      <span class="pageno">P.01/01</span>
+    </footer>
+  </section>
+</template>
+
+<script>
+(function(){
+  'use strict';
+  var SLOTS = 13;                 // photo slots per day (>= 10)
+  var MAX_EDGE = 1600;            // downscale uploads for sharp-but-light printing
+  var pages = document.getElementById('pages');
+  var tpl = document.getElementById('dayTpl');
+  var picker = document.createElement('input');
+  picker.type = 'file'; picker.accept = 'image/*'; picker.multiple = true;
+  var targetSlot = null;
+
+  function makeSlot(){
+    var f = document.createElement('figure');
+    f.className = 'slot'; f.tabIndex = 0;
+    f.innerHTML =
+      '<div class="ph"><img alt=""><button class="del" title="사진 제거">×</button>' +
+      '<span class="hint">+ PHOTO</span></div>' +
+      '<figcaption class="cap" contenteditable data-ph="캡션_"></figcaption>';
+    return f;
+  }
+
+  function addDay(){
+    var node = tpl.content.firstElementChild.cloneNode(true);
+    var grid = node.querySelector('.grid');
+    for (var i = 0; i < SLOTS; i++) grid.appendChild(makeSlot());
+    pages.appendChild(node);
+    renumber();
+    return node;
+  }
+
+  function renumber(){
+    var all = pages.querySelectorAll('.page');
+    all.forEach(function(p, i){
+      var n = String(i + 1).padStart(2, '0');
+      var total = String(all.length).padStart(2, '0');
+      p.querySelector('.day-num').textContent = 'DAY_' + n;
+      p.querySelector('.term-day').textContent = 'day_' + n;
+      p.querySelector('.pageno').textContent = 'P.' + n + '/' + total;
+    });
+  }
+
+  // downscale via canvas so 13 photos/page stay light + print sharp
+  function loadInto(slot, file){
+    if (!file || !/^image\//.test(file.type)) return;
+    var img = new Image();
+    img.onload = function(){
+      URL.revokeObjectURL(img.src);
+      var s = Math.min(1, MAX_EDGE / Math.max(img.width, img.height));
+      var c = document.createElement('canvas');
+      c.width = Math.round(img.width * s);
+      c.height = Math.round(img.height * s);
+      c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+      slot.querySelector('img').src = c.toDataURL('image/jpeg', 0.88);
+      slot.classList.add('filled');
+    };
+    img.src = URL.createObjectURL(file);
+  }
+
+  picker.addEventListener('change', function(){
+    if (!targetSlot) return;
+    var files = Array.prototype.slice.call(picker.files);
+    if (!files.length) return;
+    // fill the clicked slot, then flow extras into that day's empty slots
+    var day = targetSlot.closest('.page');
+    var queue = [targetSlot].concat(
+      Array.prototype.filter.call(day.querySelectorAll('.slot'), function(s){
+        return s !== targetSlot && !s.classList.contains('filled');
+      })
+    );
+    files.forEach(function(f, i){ if (queue[i]) loadInto(queue[i], f); });
+    picker.value = ''; targetSlot = null;
+  });
+
+  pages.addEventListener('click', function(e){
+    var del = e.target.closest('.del');
+    if (del){
+      var s = del.closest('.slot');
+      s.classList.remove('filled');
+      s.querySelector('img').removeAttribute('src');
+      return;
+    }
+    if (e.target.closest('.day-del')){
+      var p = e.target.closest('.page');
+      if (pages.querySelectorAll('.page').length > 1 &&
+          confirm('이 날짜 페이지를 삭제할까요?')) { p.remove(); renumber(); }
+      return;
+    }
+    if (e.target.closest('.cap')) return; // typing a caption, not uploading
+    var slot = e.target.closest('.slot');
+    if (slot){ targetSlot = slot; picker.click(); }
+  });
+
+  pages.addEventListener('keydown', function(e){
+    if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('slot')){
+      e.preventDefault(); targetSlot = e.target; picker.click();
+    }
+  });
+
+  document.getElementById('addDay').addEventListener('click', function(){
+    addDay().scrollIntoView({behavior:'smooth', block:'start'});
+  });
+  document.getElementById('printBtn').addEventListener('click', function(){ window.print(); });
+
+  addDay(); // DAY_01
+  addDay(); // DAY_02
+})();
+</script>
+</body>
+</html>
