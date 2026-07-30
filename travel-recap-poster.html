@@ -319,9 +319,9 @@ body.edit-mode [contenteditable]{
   font-size:5.5pt;letter-spacing:.08em;line-height:1.5;transform:rotate(-8deg);
 }
 .env-title{
-  position:absolute;left:0;right:0;bottom:6mm;text-align:center;
-  font-family:var(--kr);font-weight:900;font-size:17.5pt;line-height:1.5;
-  color:#fff;letter-spacing:.02em;
+  position:absolute;left:0;right:0;bottom:5mm;text-align:center;
+  font-family:var(--mono);font-weight:700;font-size:19pt;line-height:1.25;
+  color:#fff;letter-spacing:.01em;
   text-shadow:
     -1.2px -1.2px 0 var(--ku),1.2px -1.2px 0 var(--ku),
     -1.2px 1.2px 0 var(--ku),1.2px 1.2px 0 var(--ku),
@@ -329,8 +329,9 @@ body.edit-mode [contenteditable]{
     -1.6px 0 0 var(--ku),1.6px 0 0 var(--ku),
     2.5px 3px 0 rgba(3,107,63,.35);
 }
-.env-title .en{display:block;font-family:var(--mono);font-size:8pt;font-weight:700;
-  color:var(--hot);text-shadow:none;letter-spacing:.3em;margin-top:1mm}
+.env-title .sub{display:block;font-size:10pt;letter-spacing:.16em;margin-top:1.2mm}
+.env-title .kr-eyebrow{display:block;font-family:var(--kr);font-size:8pt;font-weight:700;
+  color:var(--hot);text-shadow:none;letter-spacing:.3em;margin-bottom:1.5mm}
 
 /* day delete (screen only) */
 .day-del{
@@ -424,8 +425,8 @@ body.edit-mode [contenteditable]{
         <div class="tt-head">Anytime Day Single</div>
         <div class="tt-body">
           <span>Valid for one journey from</span>
-          <span><b>GIMPO (GMP)</b> to <b>TAIPEI (TPE)</b></span>
-          <span class="kr-line" contenteditable data-ph="2026.01.26 — 01.31 · 5박 6일_"></span>
+          <span><b>INCHEON (ICN)</b> to <b>TAICHUNG (RMQ)</b></span>
+          <span class="kr-line" contenteditable data-ph="2026.07.26 — 07.31 · 5박 6일_"></span>
         </div>
       </div>
 
@@ -434,7 +435,7 @@ body.edit-mode [contenteditable]{
         <div class="ec-chip"></div>
         <div>
           <div class="ec-name">悠遊卡 EasyCard</div>
-          <div class="ec-sub">TAIPEI METRO ★ KONKUK PA</div>
+          <div class="ec-sub">TAICHUNG ★ KONKUK PA</div>
         </div>
       </div>
 
@@ -442,7 +443,7 @@ body.edit-mode [contenteditable]{
       <div class="nm-card">
         <span class="nm-big">NIGHT<br>MARKET</span>
         <span class="nm-rule"></span>
-        <span class="nm-kr">士林夜市 · 야시장은 진리</span>
+        <span class="nm-kr">逢甲夜市 · 야시장은 진리</span>
         <span class="nm-small">ZHENGZHI ★ SPEAKS</span>
       </div>
 
@@ -455,21 +456,22 @@ body.edit-mode [contenteditable]{
     <div class="airmail cover-env">
       <div class="airmail-inner">
         <div class="env-addr">
-          FROM: <b>KONKUK UNIV. SEOUL</b><br>
-          TO: <b>TAIWAN 台灣</b> · VIA AIR MAIL
+          FROM: <b>INCHEON (ICN), KOREA</b><br>
+          TO: <b>TAICHUNG 台中, TAIWAN</b> · VIA AIR MAIL
         </div>
         <div class="env-stamp">🏔<small>110</small></div>
         <div class="env-postmark">KONKUK<br>✈<br>2026</div>
         <div class="env-title">
-          2026 건국대학교 행정학과<br>대만 국제교류 프로그램
-          <span class="en">★ TAIWAN EXCHANGE PROGRAM ★</span>
+          <span class="kr-eyebrow">건국대학교 행정학과</span>
+          2026 KOREA-TAIWAN
+          <span class="sub">INTERNATIONAL EXCHANGE PROGRAM</span>
         </div>
       </div>
     </div>
 
     <div class="airmail" style="margin-top:2.5mm">
       <div class="airmail-inner">
-        <span class="loc" contenteditable data-ph="2026.01.26 — 01.31"></span>
+        <span class="loc" contenteditable data-ph="2026.07.26 — 2026.07.31"></span>
         <span class="memo" contenteditable data-ph="함께한 사람들_"></span>
         <span class="stamp-mini">AIR MAIL</span>
         <span class="barcode" aria-hidden="true"></span>
@@ -491,11 +493,11 @@ body.edit-mode [contenteditable]{
     <button class="day-del" title="이 날짜 삭제">DEL ×</button>
 
     <header class="ticket-head">
-      <div class="repeat-row">TAIPEI TAIPEI TAIPEI TAIPEI TAIPEI TAIPEI TAIPEI TAIPEI TAIPEI TAIPEI TAIPEI TAIPEI TAIPEI TAIPEI</div>
+      <div class="repeat-row">TAICHUNG TAICHUNG TAICHUNG TAICHUNG TAICHUNG TAICHUNG TAICHUNG TAICHUNG TAICHUNG TAICHUNG TAICHUNG</div>
       <div class="main-row">
         <span class="admit">ADMIT ONE ★</span>
         <h1 class="day-num">DAY_01</h1>
-        <span class="day-date" contenteditable data-ph="2026.01.26_MON"></span>
+        <span class="day-date" contenteditable data-ph="2026.07.26_SUN"></span>
         <span class="mini-code" aria-hidden="true"></span>
       </div>
     </header>
@@ -514,7 +516,7 @@ body.edit-mode [contenteditable]{
 
     <div class="airmail">
       <div class="airmail-inner">
-        <span class="loc" contenteditable data-ph="TAIPEI_25.0330°N"></span>
+        <span class="loc" contenteditable data-ph="TAICHUNG_24.1477°N"></span>
         <span class="memo" contenteditable data-ph="오늘의 메모_"></span>
         <span class="stamp-mini">AIR MAIL</span>
         <span class="barcode" aria-hidden="true"></span>
